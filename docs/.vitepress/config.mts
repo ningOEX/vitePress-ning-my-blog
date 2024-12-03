@@ -45,17 +45,6 @@ export default defineConfig({
     }
 
   },
-    vite: {
-    // 确保支持 Vue 组件
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            giscus: ['@giscus/react'],
-          },
-        },
-      },
-    },
-  },
+   
   
 })
