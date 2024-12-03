@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "DEBRIS",
   description: "Leave a lingering fragrance in your hand",
+
+ 
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -20,10 +23,17 @@ export default defineConfig({
         ]
       }
     ],
-
+    // algolia传送阵 https://docsearch.algolia.com/apply/
+     algolia: {
+      apiKey: '849b4e53f137cc98780f4bfe3f81cab8',
+      indexName: 'bay-theta-14',
+      appId: '0UZB7965F7'
+    },
+    logo:"/imgs/logo.jpg",
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ningOEX?tab=repositories' }
     ],
+    
     // 在 sidebar 后添加
     outlineTitle: '本页目录',
     darkModeSwitchLabel: '切换主题',
@@ -34,5 +44,18 @@ export default defineConfig({
       next: '下一页'
     }
 
-  }
+  },
+    vite: {
+    // 确保支持 Vue 组件
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            giscus: ['@giscus/react'],
+          },
+        },
+      },
+    },
+  },
+  
 })

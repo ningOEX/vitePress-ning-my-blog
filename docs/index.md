@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "My Development debris"
-  text: "Leave a lingering fragrance in your hand"
+  name: "日常碎片随手记"
+  text: "写好每一行 Hello World!"
   tagline: IT JS VUE CSS HTML BLOG
   actions:
     - theme: brand
@@ -15,8 +15,8 @@ hero:
       link: /aboutPage/about.md
 
 features:
-  - title: VUE3
-    details: Everything about everyday fragments of vue3, recording classic fragments.
+  - title: 前端
+    details: Everything about everyday fragments of Front end technology, recording classic fragments.
   - title: CSS/HTML
     details: No matter how simple it is, you should record it. What if you forget it?
   - title: other
