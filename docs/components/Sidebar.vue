@@ -1,11 +1,14 @@
 <template>
-  <div class="w-full flex justify-around bbg" style="border-radius: 5px">
+  <div
+    class="w-full flex justify-around border dark:border-[#23272e] border-[#e2e2e3]"
+    style="border-radius: 5px"
+  >
     <div class="w-1/2 mx-auto p-2 pl-5 pt-5">
       <img class="" style="border-radius: 20px" src="../images/logo.png" alt="" />
     </div>
     <div class="w-2/3 p-4 grid grid-cols-1 grid-rows-1 gap-6">
-      <span class="text-base">标题而已</span>
-      <span>👑👑👑👑👑</span>
+      <span class="text-base flex items-center mt-4">人生如戏</span>
+      <span class="text-sm">不积跬步无以至千里</span>
       <div class="grid grid-cols-2 grid-rows-2 items-center text-center text-sm gap-2">
         <span>日记总量</span>
         <span>月更新+</span>

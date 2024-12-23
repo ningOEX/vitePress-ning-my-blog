@@ -1,5 +1,5 @@
 <template>
-  <div class="bbg br p-2">
+  <div class="border dark:border-[#23272e] border-[#e2e2e3] br p-2">
     <span class="text-sm">📢{{ title }}</span>
     <div>
       <div

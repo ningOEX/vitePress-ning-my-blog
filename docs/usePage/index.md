@@ -16,5 +16,3 @@ updated: 2024-12-04
 
 - [👉vitepress 中 ⭐tailwindcss的使用手册](./useTailwindcss.md)
 - [👉vitepress 中 ⭐Element-plus的使用手册](./useElement-plus.md)
-
-<Card />

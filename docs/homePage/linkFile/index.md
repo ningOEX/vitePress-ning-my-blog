@@ -88,7 +88,6 @@ updated: 2024-12-04
 
 - [lightbox2 - 图片预览 👑](https://lokeshdhakar.com/projects/lightbox2/)
 
-<Card />
 
 <style>
 /* From Uiverse.io by lucifer4330k */ 

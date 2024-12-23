@@ -1,5 +1,5 @@
 <template>
-  <div class="bbg p-2 br">
+  <div class="border dark:border-[#23272e] border-[#e2e2e3] p-2 br">
     <span class="text-sm">🏷 标签</span>
 
     <div class="flex flex-wrap items-center gap-x-2 gap-y-6 text-xs mt-2">

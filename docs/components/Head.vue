@@ -2,7 +2,7 @@
   <div class="w-full sm:h-60 text-center flex items-center justify-center">
     <div>
      <img class="sm:hidden w-40 mx-auto box-border  py-6 clip-path" src="https://avatars.githubusercontent.com/u/52589990?v=4" alt="">
-      <p class="font-sans text-4xl"> <h1 >标题而已</h1></p>
+      <p class="font-sans text-4xl"> <h1 >人生如戏</h1></p>
       <div class="p-2 text-xl">
         <Transition name="fade" mode="out-in">
           <span v-if="currentItem" :key="currentItem">{{ currentItem.content }}</span>

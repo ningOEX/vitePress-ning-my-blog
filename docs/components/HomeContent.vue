@@ -1,5 +1,5 @@
 <template>
-  <div>123</div>
+  <div class="border dark:border-[#23272e] border-[#e2e2e3] rounded-sm">123</div>
 </template>
 
 <script setup>
