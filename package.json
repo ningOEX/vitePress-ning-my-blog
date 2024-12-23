@@ -1,10 +1,18 @@
 {
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "babel-plugin-import": "^1.13.8",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
     "vitepress": "^1.5.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "element-plus": "^2.9.0"
   }
 }

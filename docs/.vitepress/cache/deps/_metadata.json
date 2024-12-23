@@ -1,40 +1,82 @@
 {
-  "hash": "3a402af8",
-  "configHash": "2db84c14",
-  "lockfileHash": "adc58262",
-  "browserHash": "06819c31",
+  "hash": "5e30a01b",
+  "configHash": "025428c9",
+  "lockfileHash": "7bea3eb0",
+  "browserHash": "de26f816",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "20945046",
+      "fileHash": "a8167784",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "72b06ec6",
+      "fileHash": "bc6b84a8",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "af9f592e",
+      "fileHash": "d3989837",
       "needsInterop": false
     },
-    "@theme/index": {
-      "src": "../../../../node_modules/vitepress/dist/client/theme-default/index.js",
-      "file": "@theme_index.js",
-      "fileHash": "1224e9b6",
+    "element-plus": {
+      "src": "../../../../node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "957070f1",
+      "needsInterop": false
+    },
+    "element-plus/es/components/button/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/button/style/css.mjs",
+      "file": "element-plus_es_components_button_style_css.js",
+      "fileHash": "4f90fc58",
+      "needsInterop": false
+    },
+    "element-plus/es/components/container/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/container/style/css.mjs",
+      "file": "element-plus_es_components_container_style_css.js",
+      "fileHash": "d57160a5",
+      "needsInterop": false
+    },
+    "element-plus/es/components/header/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/header/style/css.mjs",
+      "file": "element-plus_es_components_header_style_css.js",
+      "fileHash": "f0bec6d2",
+      "needsInterop": false
+    },
+    "element-plus/es/components/aside/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/aside/style/css.mjs",
+      "file": "element-plus_es_components_aside_style_css.js",
+      "fileHash": "50bef83f",
+      "needsInterop": false
+    },
+    "element-plus/es/components/main/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/main/style/css.mjs",
+      "file": "element-plus_es_components_main_style_css.js",
+      "fileHash": "3a63266a",
+      "needsInterop": false
+    },
+    "element-plus/es/components/footer/style/css": {
+      "src": "../../../../node_modules/element-plus/es/components/footer/style/css.mjs",
+      "file": "element-plus_es_components_footer_style_css.js",
+      "fileHash": "227888e6",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-YJ6QP2VR": {
-      "file": "chunk-YJ6QP2VR.js"
+    "chunk-EY4PTGLG": {
+      "file": "chunk-EY4PTGLG.js"
     },
-    "chunk-LW4I4DCF": {
-      "file": "chunk-LW4I4DCF.js"
+    "chunk-O3YQPVDG": {
+      "file": "chunk-O3YQPVDG.js"
+    },
+    "chunk-SSSTV3QS": {
+      "file": "chunk-SSSTV3QS.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
     }
   }
 }

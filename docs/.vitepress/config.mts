@@ -3,36 +3,65 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "DEBRIS",
-  description: "Leave a lingering fragrance in your hand",
+  description: "日记、ningOEX、JS、前端日记个人博客",
 
- 
+  lastUpdated:true,
 
   themeConfig: {
+
+    lastUpdatedText: '最后更新',
+
+     logo:"https://avatars.githubusercontent.com/u/52589990?v=4",
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/homePage/home.md' },
-      { text: 'About', link: '/aboutPage/about.md' }
+      {text:"开发笔记", link: '/usePage/'},
+      { text: '前端', 
+         items: [
+          { text: 'javaScript', link: '/homePage/jsFile/' },
+          { text: 'HTML', link: '/homePage/htmlFile/' },
+          { text: 'CSS', link: '/homePage/cssFile/' },
+          { text: 'Vue', link: '/homePage/vueFile/' },
+          { text: '周边', link: '/homePage/linkFile/' }
+        ]
+      },
     ],
 
-    sidebar: [
-      {
-        text: 'About',
-        items: [
-          // { text: 'Markdown Examples', link: '/markdown-examples' },
-          
-        ]
-      }
-    ],
+    sidebar: {
+      '/homePage/linkFile': [
+        {
+          text: '常用的库',
+          items: [
+            { text: 'tailwindcss⭐', link: 'https://www.tailwindcss.cn/' },
+            { text: 'Echarts⭐', link: 'https://echarts.apache.org/zh/index.html' },
+            { text: 'axios⭐', link: 'http://www.axios-js.com/' },
+          ],
+        },
+      ],
+      '/usePage/':[
+        {
+          text: 'vitepress👇',
+          items: [
+            { text: 'tailwindcss使用', link: '/usePage/useTailwindcss.md' },
+            { text: 'Element-plus使用', link: '/usePage/useElement-plus.md' },
+          ],
+        }
+      ]
+    },
+
+    
     // algolia传送阵 https://docsearch.algolia.com/apply/
      algolia: {
       apiKey: '849b4e53f137cc98780f4bfe3f81cab8',
       indexName: 'bay-theta-14',
       appId: '0UZB7965F7'
     },
-    logo:"/imgs/logo.jpg",
+   
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ningOEX?tab=repositories' }
     ],
+
+    
     
     // 在 sidebar 后添加
     outlineTitle: '本页目录',
@@ -42,6 +71,10 @@ export default defineConfig({
     docFooter: {
       prev: '上一页',
       next: '下一页'
+    },
+     footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2019-present Evan You'
     }
 
   },
