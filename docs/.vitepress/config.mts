@@ -5,19 +5,20 @@ export default defineConfig({
   title: "DEBRIS",
   description: "日记、ningOEX、JS、前端日记个人博客",
 
-  lastUpdated:true,
+  lastUpdated: true,
 
   themeConfig: {
 
     lastUpdatedText: '最后更新',
 
-     logo:"https://avatars.githubusercontent.com/u/52589990?v=4",
+    logo: "https://avatars.githubusercontent.com/u/52589990?v=4",
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      {text:"开发笔记", link: '/usePage/'},
-      { text: '前端', 
-         items: [
+      { text: "开发笔记", link: '/usePage/' },
+      {
+        text: '前端',
+        items: [
           { text: 'javaScript', link: '/homePage/jsFile/' },
           { text: 'HTML', link: '/homePage/htmlFile/' },
           { text: 'CSS', link: '/homePage/cssFile/' },
@@ -38,7 +39,7 @@ export default defineConfig({
           ],
         },
       ],
-      '/usePage/':[
+      '/usePage/': [
         {
           text: 'vitepress👇',
           items: [
@@ -49,20 +50,20 @@ export default defineConfig({
       ]
     },
 
-    
+
     // algolia传送阵 https://docsearch.algolia.com/apply/
-     algolia: {
+    algolia: {
       apiKey: '849b4e53f137cc98780f4bfe3f81cab8',
       indexName: 'bay-theta-14',
       appId: '0UZB7965F7'
     },
-   
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ningOEX?tab=repositories' }
     ],
 
-    
-    
+
+
     // 在 sidebar 后添加
     outlineTitle: '本页目录',
     darkModeSwitchLabel: '切换主题',
@@ -72,12 +73,12 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
-     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
+    footer: {
+      message: '由 vercel 提供快速的部署服务',
+      copyright: 'Copyright © 2024-205 ningOEX'
     }
 
   },
-   
-  
+
+
 })

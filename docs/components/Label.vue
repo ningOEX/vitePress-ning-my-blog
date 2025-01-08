@@ -1,14 +1,11 @@
 <template>
-  <div class="border dark:border-[#23272e] border-[#e2e2e3] p-2 br">
+  <div class="p-4 br shadow-lg">
     <span class="text-sm">🏷 标签</span>
 
     <div class="flex flex-wrap items-center gap-x-2 gap-y-6 text-xs mt-2">
-      <span
-        :class="bgHandle(index)"
-        style="padding: 2px 8px; cursor: pointer"
-        v-for="(label, index) in Labels"
-        >{{ label }}</span
-      >
+      <el-tag :type="getType(index)" v-for="(label, index) in Labels" effect="dark">{{
+        label
+      }}</el-tag>
     </div>
   </div>
 </template>
@@ -19,13 +16,19 @@ import { ref, onMounted } from "vue";
 
 const Labels = ref<string[]>([]);
 
-const bgHandle = (i: number) => {
-  let className = "";
-  if (i % 1 === 0) className = "note-1 br"; // 1的倍数
-  if (i % 2 === 0) className = "note-2 br"; // 2的倍数
-  if (i % 3 === 0) className = "note-3 br"; // 3的倍数
-  if (i % 4 === 0) className = "note-4 br"; // 4的倍数
-  return className;
+const getType = (index: number) => {
+  const types = ["primary", "success", "warning", "danger", "info"];
+  if (index % 1 === 0) {
+    return types[index % types.length];
+  } else if (index % 2 === 0) {
+    return types[index % types.length];
+  } else if (index % 3 === 0) {
+    return types[index % types.length];
+  } else if (index % 4 === 0) {
+    return types[index % types.length];
+  } else {
+    return types[index % types.length];
+  }
 };
 
 onMounted(async () => {
@@ -33,26 +36,3 @@ onMounted(async () => {
   Labels.value = res.labels;
 });
 </script>
-
-<style>
-/* 不同颜色的便签 */
-.note-1 {
-  color: #4caf50; /* 绿色 */
-  background-color: #1c2518;
-}
-
-.note-2 {
-  color: #2196f3; /* 蓝色 */
-  background-color: #18222c;
-}
-
-.note-3 {
-  color: #ff9800; /* 橙色 */
-  background-color: #1b1b1f;
-}
-
-.note-4 {
-  color: #f44336; /* 红色 */
-  background-color: #2b1d1d;
-}
-</style>

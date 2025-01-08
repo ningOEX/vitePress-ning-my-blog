@@ -1,9 +1,13 @@
 <template>
   <div class="w-full sm:h-60 text-center flex items-center justify-center">
     <div>
-     <img class="sm:hidden w-40 mx-auto box-border  py-6 clip-path" src="https://avatars.githubusercontent.com/u/52589990?v=4" alt="">
-      <p class="font-sans text-4xl"> <h1 >人生如戏</h1></p>
-      <div class="p-2 text-xl">
+      <img
+        class="sm:hidden w-40 mx-auto box-border py-6 rounded-sm"
+        src="https://avatars.githubusercontent.com/u/52589990?v=4"
+        alt=""
+      />
+      <p class="font-sans text-4xl">人生如戏</p>
+      <div class="p-2 text-xl h-20">
         <Transition name="fade" mode="out-in">
           <span v-if="currentItem" :key="currentItem">{{ currentItem.content }}</span>
           <span v-else>黑暗中 是否找到来时的路</span>
@@ -62,7 +66,7 @@ h1 {
   font-size: inherit;
 }
 
-.clip-path{
- clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+.clip-path {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 </style>

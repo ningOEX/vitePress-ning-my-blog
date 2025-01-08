@@ -6,7 +6,17 @@
     border-radius: 5px;
 }
 
-.bbg {
-    border: 0.5px solid rgba(159, 184, 196, 0.5);
-    box-shadow: inset 0px 1px 2px 0px;
+a {
+    color: inherit;
+    /* 继承父元素的文字颜色 */
+    text-decoration: none;
+    /* 去掉下划线 */
+    background: none;
+    /* 去掉背景 */
+    border: none;
+    /* 去掉边框 */
+    padding: 0;
+    /* 去掉内边距 */
+    margin: 0;
+    /* 去掉外边距 */
 }
