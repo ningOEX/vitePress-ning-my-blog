@@ -19,6 +19,6 @@ export default {
         app.component('WordCount', WordCount);
         app.component('Home', Home);
         app.component('Layout', Layout);
-        app.component(ElTag.name, ElTag); // 标签
+        app.component('ElTag', ElTag); // 标签
     },
 };
