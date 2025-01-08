@@ -22,5 +22,4 @@ import Head from "./Head.vue";
 import Sidebar from "./Sidebar.vue";
 import Label from "./Label.vue";
 import FineMd from "./FineMd.vue";
-import { ElDivider } from "element-plus";
 </script>
