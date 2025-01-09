@@ -1,10 +1,10 @@
 <template>
   <div class="flex justify-around max-h-36 shadow-lg" style="border-radius: 5px">
     <div class="w-1/2 mx-auto p-2 pl-5 pt-5">
-      <img class="w-28" style="border-radius: 20px" src="../images/logo.png" alt="" />
+      <img class="w-28 hover:animate-spin" style="border-radius: 20px" src="../images/logo.png" alt="" />
     </div>
     <div class="w-2/3 p-4 grid grid-cols-1 grid-rows-1 gap-6">
-      <span class="text-sm flex items-center mt-4">人生如戏</span>
+      <span class="text-sm flex items-center mt-4">NING OEX</span>
       <span class="text-xs">不积跬步无以至千里</span>
       <div class="grid grid-cols-2 grid-rows-2 items-center text-center text-xs gap-2">
         <span>日记总量</span>

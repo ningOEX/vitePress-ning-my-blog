@@ -6,10 +6,10 @@
         src="https://avatars.githubusercontent.com/u/52589990?v=4"
         alt=""
       />
-      <p class="font-sans text-4xl">人生如戏</p>
+      <p class="font-sans text-4xl">NING OEX</p>
       <div class="p-2 text-xl h-20">
         <Transition name="fade" mode="out-in">
-          <span v-if="currentItem" :key="currentItem">{{ currentItem.content }}</span>
+          <span v-if="currentItem" >{{ currentItem.content }}</span>
           <span v-else>黑暗中 是否找到来时的路</span>
         </Transition>
       </div>
@@ -19,9 +19,21 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, onBeforeUnmount } from "vue";
-import { request } from "../utils/request.js";
 
-const description = ref<string[]>([]); //数据
+const description = [
+  {
+    "content": "别让别人的评价定义你，真正的你是自己在不断塑造的"
+  },
+  {
+    "content": "每一次努力都是为了更好的自己"
+  },
+  {
+    "content": "人生的每一段旅程，都是为下一次飞翔积蓄力量"
+  },
+  {
+    "content": "生命的意义在于追求，而非结果"
+  }
+] //数据
 
 const timer = ref(null); //定时器
 
@@ -29,17 +41,15 @@ const currentIndex = ref(null); //当前索引
 
 const duration = 4000; //切换的时间
 
-const currentItem = computed(() => description.value[currentIndex.value]); // 计算当前项
+const currentItem = computed(() => description[currentIndex.value]); // 计算当前项
 
 const startSwitching = () => {
   timer.value = setInterval(() => {
-    currentIndex.value = (currentIndex.value + 1) % description.value.length; // 更新索引
+    currentIndex.value = (currentIndex.value + 1) % description.length; // 更新索引
   }, duration); // 每 2000 毫秒切换一次
 };
 
 onMounted(async () => {
-  const res = await request("/data.json"); // 请求 JSON 文件
-  description.value = res.description;
   startSwitching();
 });
 

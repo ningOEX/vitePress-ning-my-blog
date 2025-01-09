@@ -14,10 +14,29 @@
 </template>
 
 <script setup lang="ts">
-import { request } from "../utils/request.js";
-import { ref, onMounted } from "vue";
-
-const Labels = ref<string[]>([]);
+//data
+const Labels = [
+  "前端",
+  "CSS",
+  "javascript",
+  "HTML",
+  "vitePress",
+  "网络请求",
+  "自定义主题使用手册",
+  "DOM",
+  "BOM",
+  "碎片",
+  "日记",
+  "OEX",
+  "早晨豆浆",
+  "码农",
+  "搬运工",
+  "构建工具",
+  "CLI",
+  "算法与结构",
+  "JS新特性",
+  "微信小程序"
+];
 
 const bgHandle = (i: number) => {
   let className = "";
@@ -28,10 +47,6 @@ const bgHandle = (i: number) => {
   return className;
 };
 
-onMounted(async () => {
-  const res = await request("/data.json");
-  Labels.value = res.labels;
-});
 </script>
 
 <style>

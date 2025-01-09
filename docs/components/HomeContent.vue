@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-sm text-sm grid gap-4 overflow-hidden py-6 pt-2 box-border">
+  <div class="rounded-sm text-sm grid gap-4 overflow-hidden py-6 pt-4 box-border ">
     <div
-      v-for="(item, index) in bookList"
+      v-for="(item, index) in 6"
       :key="index"
       class="grid rounded-sm grid-cols-1 grid-rows-1 gap-2 shadow-lg p-4 cursor-pointer hover:outline hover:outline-gray-700/20 hover:hover:shadow-gray-700/50 dark:hover:shadow-gray-700 dark:hover:outline dark:hover:outline-gray-700"
     >
@@ -16,7 +16,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { request } from "../utils/request.js";
 
 interface Book {
   description: string;
@@ -31,9 +30,6 @@ const currentPage = ref(5);
 const pageSize = ref(100);
 
 onMounted(async () => {
-  const res = await request("/data.json");
-  bookList.value = res.blogs;
-  console.log(res);
 });
 </script>
 

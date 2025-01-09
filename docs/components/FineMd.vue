@@ -1,21 +1,4 @@
-<template>
-  <div class="br p-4 shadow-lg">
-    <span class="text-xs">📢{{ title }}</span>
-    <div>
-      <div
-        v-for="(item, index) in list"
-        :key="index"
-        class="my-3 cursor-pointer text-xs"
-        @click="changeHandle"
-      >
-        <a :href="item.link" class="grid grid-cols-1 grid-rows-1 gap-1 border">
-          <span>{{ item.title }}</span>
-          <span>{{ item.time }}</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</template>
+
 
 <script setup lang="ts">
 const title = "精选";
@@ -58,6 +41,24 @@ const list = [
   },
 ];
 </script>
+
+<template>
+  <div class="br p-4 shadow-lg">
+    <span class="text-xs">📢{{ title }}</span>
+    <div>
+      <div
+          v-for="(item, index) in list"
+          :key="index"
+          class="my-3 cursor-pointer text-xs"
+      >
+        <a :href="item.link" class="grid grid-cols-1 grid-rows-1 gap-1 border">
+          <span>{{ item.title }}</span>
+          <span>{{ item.time }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style>
 a {
