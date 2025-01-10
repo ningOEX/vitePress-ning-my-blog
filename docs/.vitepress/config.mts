@@ -15,6 +15,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: "修炼法宝", link: '/navContent/' },
       { text: "开发笔记", link: '/usePage/' },
       {
         text: '前端',
@@ -49,14 +50,16 @@ export default defineConfig({
         }
       ]
     },
-
+    search:{
+      provider: 'local'
+    },
 
     // algolia传送阵 https://docsearch.algolia.com/apply/
-    algolia: {
-      apiKey: '849b4e53f137cc98780f4bfe3f81cab8',
-      indexName: 'bay-theta-14',
-      appId: '0UZB7965F7'
-    },
+    // algolia: {
+    //   apiKey: '849b4e53f137cc98780f4bfe3f81cab8',
+    //   indexName: 'bay-theta-14',
+    //   appId: '0UZB7965F7'
+    // },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ningOEX?tab=repositories' }
@@ -65,7 +68,7 @@ export default defineConfig({
 
 
     // 在 sidebar 后添加
-    outlineTitle: '本页目录',
+    outlineTitle: '指南针',
     darkModeSwitchLabel: '切换主题',
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '回到顶部',
@@ -75,7 +78,7 @@ export default defineConfig({
     },
     footer: {
       message: '由 vercel 提供快速的部署服务',
-      copyright: 'Copyright © 2024-205 ningOEX'
+      copyright: 'Copyright © 2024-2025 ningOEX'
     }
 
   },
