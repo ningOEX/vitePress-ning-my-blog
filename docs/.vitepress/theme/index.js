@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme';
-
+import {nextTick} from "vue"
 
 // components
 import UpdatedTime from '../../components/UpdatedTime.vue';
@@ -8,7 +8,6 @@ import Home from '../../components/Home.vue';
 import Layout from '../../components/Layout.vue';
 import navContent from "../../components/navContent/index.vue"
 import ElementPlus from 'element-plus'
-
 
 // css
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -23,6 +22,8 @@ export default {
         app.component('Home', Home);
         app.component('Layout', Layout);
         app.component('navContent', navContent);
-        app.use(ElementPlus)
+        app.use(ElementPlus);
+
     },
+
 };

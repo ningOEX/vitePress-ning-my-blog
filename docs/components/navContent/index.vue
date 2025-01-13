@@ -1,8 +1,8 @@
 <script setup lang="ts">
 //
-import {ref} from "vue"
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-
+// card  数据源 static
 const navLists = [
   {
     name:'开门见山',
@@ -373,11 +373,65 @@ const navLists = [
   },
 ]
 
-const containerRef = ref<HTMLElement | null>(null)
+const containerRef = ref<HTMLElement | null>(null) // ref
+const currentActive = ref(''); // 当前锚点
+const offset = 30; // 设置偏移量
 
+
+// 点击card
 const change =(link : string)=>{
   window.open(link, '_blank');
 }
+
+
+// 滚动时间 主要为了监测滚动高亮锚点
+const handleScroll = () => {
+  const scrollPosition = window.scrollY + offset; // 加上偏移量
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  // 如果滚动到底部，直接返回
+  if (scrollPosition + windowHeight >= documentHeight) {
+    currentActive.value = `part${navLists.length - 1}`; // 设置为最后一个部分
+    return;
+  }else{
+    currentActive.value = '';
+  }
+
+  navLists.forEach((item, index) => {
+    const element = document.getElementById(`part${index}`);
+    if (element) {
+      const offsetTop = element.offsetTop;
+      const offsetHeight = element.offsetHeight;
+      if (
+          scrollPosition >= offsetTop &&
+          scrollPosition < offsetTop + offsetHeight
+      ) {
+        currentActive.value = `part${index}`;
+      }
+    }
+  });
+};
+
+// 点击锚点进行滚动到对应侧边栏
+const scrollToSection = (id : string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+// 注册滚动时间
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+// 销毁滚动时间
+onBeforeUnmount(() => {
+  // 清除事件监听器
+  window.removeEventListener('scroll', handleScroll);
+});
 
 </script>
 
@@ -385,7 +439,7 @@ const change =(link : string)=>{
   <div ref="containerRef"  class="w-full p-4 relative">
     <div class="px-2 md:px-20 lgg:px-28  xl:px-40 2xl:px-64">
       <p class="text-2xl font-bold my-6">指南针</p>
-      <div v-for="(item,index) in navLists" :key="index"  class="mb-8" :id="`part${index}`">
+      <div v-for="(item,index) in navLists" :key="index"  class="mb-8 " :id="`part${index}`">
         <div class="line w-full h-[1px] my-4 bg-black/20 dark:bg-white/10  box-border "></div>
         <p class="text-xl font-bold my-6" >{{item.name}}</p>
         <div class="grid
@@ -421,20 +475,21 @@ const change =(link : string)=>{
         </div>
       </div>
     </div>
-    <div class="opacity-0 xl:opacity-100 absolute top-0 xl:right-20 2xl:right-36 ">
+    <div class="opacity-0 xl:opacity-100 absolute top-0 xl:right-2 2xl:right-20 ">
       <el-affix :offset="120">
-        <p class="text-sm p-4 py-2 cursor-default">指南针</p>
-        <el-anchor
-            :container="containerRef"
-            direction="vertical"
-            type="default"
-            :offset="30"
-            :select-scroll-top="true"
-        >
-          <el-anchor-link v-for="(item,index) in navLists" :key="index" :href="`#part${index}`" :title="item.name" />
-        </el-anchor>
+        <p class="text-sm pb-2 cursor-default animate-bounce">指南针</p>
+        <div class="w-40 border-l border-gray-500/50 pl-1  box-border">
+          <ul class="w-full">
+            <li v-for="(item,index) in navLists" :key="index"
+                @click.prevent="scrollToSection(`part${index}`)"
+                class="text-sm py-1 cursor-pointer"
+                :class="currentActive === `part${index}` ? 'text-[#a8b1ff] ' : 'text-slate-500' "
+            ><span class=" pl-2 rounded-xs -ml-[5px] " :class="currentActive === `part${index}` ? ' border-[#a8b1ff] border-l-2' : 'border-[#1b1b1f]' ">{{item.name}}</span></li>
+          </ul>
+        </div>
       </el-affix>
     </div>
+
   </div>
 </template>
 
