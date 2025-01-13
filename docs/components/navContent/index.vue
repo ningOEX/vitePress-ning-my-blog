@@ -1,7 +1,11 @@
 <script setup lang="ts">
+//
+import {ref} from "vue"
+
+
 const navLists = [
   {
-    name:'逐梦起点',
+    name:'开门见山',
     nav:[
       {
         icon:'https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png',
@@ -12,16 +16,16 @@ const navLists = [
     ]
   },
   {
-    name:'数据使者',
+    name:'网络请求相关',
     nav:[
       {
-        icon:'http://www.axios-js.com/icon/favicon-32x32.png',
+        icon:'http://axios-http.com/assets/favicon.ico',
         name:'Axios',
         abbreviation:'易用、简洁且高效的http库',
         link:'http://www.axios-js.com/',
       },
       {
-        icon:'http://mockjs.com/assets/img/logo-2.svg',
+        icon:'',
         name:'Mock.js',
         abbreviation:'生成随机数据，拦截 Ajax 请求',
         link:'http://mockjs.com/',
@@ -32,6 +36,41 @@ const navLists = [
         abbreviation:'Fetch使得发出网络请求和处理响应比使用旧的XMLHttpRequest更容易',
         link:'https://developer.mozilla.org/zh-CN/docs/Web/API/Window/fetch',
       }
+    ]
+  },
+  {
+    name:'神奇工具',
+    nav:[
+      {
+        icon:'https://bennettfeely.com/clippy/pics/favicon.png',
+        name:'clippy',
+        abbreviation:'css 所见即所得图片图案裁剪',
+        link:'https://bennettfeely.com/clippy/',
+      },
+      {
+        icon:'https://auto-plugin.github.io/index/autofit.js/logo.png',
+        name:'autofit.js',
+        abbreviation:'单页面比例自适应',
+        link:'https://auto-plugin.github.io/index/autofit.js/use.html',
+      },
+      {
+        icon:'https://momentjs.com/static/img/moment-favicon.png',
+        name:'Moment.js',
+        abbreviation:'在JavaScript中解析、验证、操作和显示日期和时间。',
+        link:'https://momentjs.com/',
+      },
+      {
+        icon:'',
+        name:'nprogress',
+        abbreviation:'一个视觉安慰剂的进度条',
+        link:'https://github.com/rstacruz/nprogress',
+      },{
+        icon:'https://devtool.tech/logo.svg',
+        name:'开发者武器库',
+        abbreviation:'开发者好用百宝箱',
+        link:'https://devtool.tech/',
+      },
+
     ]
   },
     {
@@ -279,7 +318,7 @@ const navLists = [
         abbreviation:'222个天气主题图标和CSS',
         link:'https://erikflowers.github.io/weather-icons/',
       },{
-        icon:'https://icones.js.org/favicon.svg',
+        icon:'',
         name:'icones',
         abbreviation:'由Iconify支持的带有即时搜索的图标浏览器',
         link:'https://icones.js.org/',
@@ -334,6 +373,8 @@ const navLists = [
   },
 ]
 
+const containerRef = ref<HTMLElement | null>(null)
+
 const change =(link : string)=>{
   window.open(link, '_blank');
 }
@@ -341,25 +382,25 @@ const change =(link : string)=>{
 </script>
 
 <template>
-  <div  class="w-full p-4 px-46  md:px-10">
-    <div  ref="containerRef" >
+  <div ref="containerRef"  class="w-full p-4 relative">
+    <div class="px-2 md:px-20 lgg:px-28  xl:px-40 2xl:px-64">
       <p class="text-2xl font-bold my-6">指南针</p>
-      <div v-for="(item,index) in navLists" :key="index"  class="mb-8">
+      <div v-for="(item,index) in navLists" :key="index"  class="mb-8" :id="`part${index}`">
         <div class="line w-full h-[1px] my-4 bg-black/20 dark:bg-white/10  box-border "></div>
-        <p class="text-xl font-bold my-6">{{item.name}}</p>
+        <p class="text-xl font-bold my-6" >{{item.name}}</p>
         <div class="grid
         grid-cols-2
-        md:grid-cols-4
-        lg:grid-cols-4
-        xl:grid-cols-5
-        2xl:grid-cols-6
+        md:grid-cols-3
+        lg:grid-cols-3
+        xl:grid-cols-4
+        2xl:grid-cols-5
         gap-4
         ">
           <div v-for="(nav,index) in item.nav"
                :key="index"
                @click="change(nav.link)"
                class="bg-gray-300/30 dark:bg-black/20
-               py-2 px-4
+               py-2 px-2
                min-w-32
                md:min-w-52
                grid gap-2
@@ -370,19 +411,41 @@ const change =(link : string)=>{
                dark:border-gray-500/30 dark:hover:border-[#a8b1ff] dark:hover:bg-black/20
           ">
             <div class="flex gap-2 items-center ">
-              <div class="p-2 bg-gray-300/50 dark:bg-gray-700/50">
+              <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
                 <img class="h-8  w-8 rounded-sm" :src="nav.icon ? nav.icon : '../../images/logo.png'" alt="">
               </div>
               <span class="font-bold">  {{nav.name}}</span>
             </div>
-            <span class="text-sm text-slate-500 line-clamp-2">{{nav.abbreviation}}</span>
+            <span class="text-xs text-slate-500 line-clamp-2">{{nav.abbreviation}}</span>
           </div>
         </div>
       </div>
     </div>
+    <div class="opacity-0 xl:opacity-100 absolute top-0 xl:right-20 2xl:right-36 ">
+      <el-affix :offset="120">
+        <p class="text-sm p-4 py-2 cursor-default">指南针</p>
+        <el-anchor
+            :container="containerRef"
+            direction="vertical"
+            type="default"
+            :offset="30"
+            :select-scroll-top="true"
+        >
+          <el-anchor-link v-for="(item,index) in navLists" :key="index" :href="`#part${index}`" :title="item.name" />
+        </el-anchor>
+      </el-affix>
+    </div>
   </div>
 </template>
 
-<style scoped>
-
+<style >
+.el-anchor{
+  background-color: initial !important;
+}
+.is-active{
+  color: #a8b1ff !important;
+}
+.el-anchor__marker{
+  background-color: #a8b1ff !important;
+}
 </style>

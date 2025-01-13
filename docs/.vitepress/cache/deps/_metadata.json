@@ -1,56 +1,50 @@
 {
-  "hash": "f26b10ec",
+  "hash": "7b525c3b",
   "configHash": "6bfa7bde",
-  "lockfileHash": "9a8f6106",
-  "browserHash": "9ca10ae8",
+  "lockfileHash": "537f5087",
+  "browserHash": "c2745cbc",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "5b96692c",
+      "fileHash": "d49220f7",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "25119624",
+      "fileHash": "88c9dd0d",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "0124430d",
+      "fileHash": "afd13fc0",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "3f2a6490",
+      "fileHash": "032f7aab",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "5db49e9f",
+      "fileHash": "6ee95a4f",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "7a4d5a57",
+      "fileHash": "05902c1e",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "343c2341",
+      "fileHash": "d091061b",
       "needsInterop": false
-    },
-    "vanta/dist/vanta.birds.min": {
-      "src": "../../../../node_modules/vanta/dist/vanta.birds.min.js",
-      "file": "vanta_dist_vanta__birds__min.js",
-      "fileHash": "814b75db",
-      "needsInterop": true
     }
   },
   "chunks": {

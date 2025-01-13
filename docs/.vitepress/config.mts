@@ -15,7 +15,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "修炼法宝", link: '/navContent/' },
+      { text: "武器库", link: '/navContent/' },
       { text: "开发笔记", link: '/usePage/' },
       {
         text: '前端',
