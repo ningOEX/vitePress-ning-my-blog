@@ -8,6 +8,7 @@ import Home from '../../components/Home.vue';
 import Layout from '../../components/Layout.vue';
 import navContent from "../../components/navContent/index.vue"
 import ElementPlus from 'element-plus'
+import ImagesView  from '../../components/imgaesView.vue'
 
 // css
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -22,6 +23,7 @@ export default {
         app.component('Home', Home);
         app.component('Layout', Layout);
         app.component('navContent', navContent);
+        app.component('ImagesView',ImagesView)
         app.use(ElementPlus);
 
     },

@@ -1,55 +1,49 @@
 {
-  "hash": "51ec87a0",
+  "hash": "7b525c3b",
   "configHash": "6bfa7bde",
-  "lockfileHash": "5c0772e5",
-  "browserHash": "02ae4f1e",
+  "lockfileHash": "537f5087",
+  "browserHash": "c2745cbc",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e51fe6ce",
+      "fileHash": "758be135",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "e6aec0a9",
+      "fileHash": "0abeda26",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "b976bc19",
+      "fileHash": "e575b0e0",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "d68f5f06",
+      "fileHash": "7c3a72f7",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "4d1452ae",
+      "fileHash": "178b46af",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "832377e0",
+      "fileHash": "d9af2171",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "bbfc74fb",
-      "needsInterop": false
-    },
-    "scrollreveal": {
-      "src": "../../../../node_modules/scrollreveal/dist/scrollreveal.es.js",
-      "file": "scrollreveal.js",
-      "fileHash": "02823553",
+      "fileHash": "9beb7a36",
       "needsInterop": false
     }
   },

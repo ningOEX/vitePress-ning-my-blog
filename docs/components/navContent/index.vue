@@ -1,6 +1,7 @@
 <script setup lang="ts">
 //
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import ImgaesView from "../imgaesView.vue";
 
 // card  数据源 static
 const navLists = [
@@ -12,29 +13,12 @@ const navLists = [
         name:'mdn',
         abbreviation:'记录网络技术，包括CSS，HTML和JavaScript，从2005年开始',
         link:'https://developer.mozilla.org/zh-CN/',
-      }
-    ]
-  },
-  {
-    name:'网络请求相关',
-    nav:[
-      {
-        icon:'http://axios-http.com/assets/favicon.ico',
-        name:'Axios',
-        abbreviation:'易用、简洁且高效的http库',
-        link:'http://www.axios-js.com/',
       },
       {
-        icon:'',
-        name:'Mock.js',
-        abbreviation:'生成随机数据，拦截 Ajax 请求',
-        link:'http://mockjs.com/',
-      },
-      {
-        icon:'https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png',
-        name:'Fetch',
-        abbreviation:'Fetch使得发出网络请求和处理响应比使用旧的XMLHttpRequest更容易',
-        link:'https://developer.mozilla.org/zh-CN/docs/Web/API/Window/fetch',
+        icon:'https://quickref.cn/icons/favicon.svg',
+        name:'Quick Reference',
+        abbreviation:'为了方便开发人员查阅技术栈，分享这份快速参考备忘清单【速查表】',
+        link:'https://quickref.cn/index.html',
       }
     ]
   },
@@ -70,6 +54,24 @@ const navLists = [
         abbreviation:'开发者好用百宝箱',
         link:'https://devtool.tech/',
       },
+
+    ]
+  },
+  {
+    name:'网络请求相关',
+    nav:[
+      {
+        icon:'http://axios-http.com/assets/favicon.ico',
+        name:'Axios',
+        abbreviation:'易用、简洁且高效的http库',
+        link:'http://www.axios-js.com/',
+      },
+      {
+        icon:'',
+        name:'Mock.js',
+        abbreviation:'生成随机数据，拦截 Ajax 请求',
+        link:'http://mockjs.com/',
+      }
 
     ]
   },
@@ -318,7 +320,7 @@ const navLists = [
         abbreviation:'222个天气主题图标和CSS',
         link:'https://erikflowers.github.io/weather-icons/',
       },{
-        icon:'',
+        icon:'https://api.iconify.design/zondicons:align-center.svg',
         name:'icones',
         abbreviation:'由Iconify支持的带有即时搜索的图标浏览器',
         link:'https://icones.js.org/',
@@ -367,8 +369,109 @@ const navLists = [
         link:'https://uviewui.com/',
       },
 
+    ]
+  },
+  {
+    name:'静态站点生成器相关',
+    nav:[
+      {
+        icon:'https://vitejs.cn/vitepress/vitepress-logo-large.webp',
+        name:'vitePress',
+        abbreviation:'由 Vite 和 Vue 驱动的静态站点生成器',
+        link:'https://vitejs.cn/vitepress/',
+      },{
+        icon:'https://hexo.io/logo.png',
+        name:'Hexo',
+        abbreviation:'快速、简洁且高效的博客框架 支持一键部署。',
+        link:'https://hexo.io/zh-cn/',
+      },{
+        icon:'https://pic.rmb.bdstatic.com/bjh/d0ce11d7f47537cab151b3fc841a4a84833.png',
+        name:'Markdown 语法',
+        abbreviation:'Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版',
+        link:'https://markdown.com.cn/basic-syntax/',
+      },{
+        icon:'https://vercel.com/vc-ap-vercel-marketing/_next/static/media/vercel-logotype-dark.e8c0a742.svg',
+        name:'Vercel',
+        abbreviation:'Vercel提供开发工具和云基础设施来构建、扩展和保护更快、更个性化的web。',
+        link:'https://vercel.com/',
+      },
 
+    ]
+  },
+  {
+    name:'图源素材开源相关',
+    nav:[
+      {
+        icon:'https://unsplash.com/apple-touch-icon.png',
+        name:'Unsplash',
+        abbreviation:'互联网的视觉资源由各地的创造者提供动力。',
+        link:'https://unsplash.com/',
+      },
+      {
+        icon:'https://pixabay.com/favicon.ico',
+        name:'pixoboy',
+        abbreviation:'令人惊叹的免版税图像',
+        link:'https://pixabay.com/',
+      },{
+        icon:'https://www.pexels.com/assets/static/images/meta/favicon.ico',
+        name:'免费素材图片',
+        abbreviation:'才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。',
+        link:'https://www.pexels.com/zh-cn/',
+      },{
+        icon:'https://www.freepik.com/favicon.ico',
+        name:'FREEPlK',
+        abbreviation:'找到数百万张让你的观众哑口无言的高质量照片',
+        link:'https://www.freepik.com/popular-photos#from_element=home_verticals',
+      },{
+        icon:'https://files.readme.io/29c6fee-blue_short.svg',
+        name:'TMDB',
+        abbreviation:'电影数据库 (TMDB) API,获取电影、电视、演员和图像 API 当前可用的方法的权威列表',
+        link:'https://developer.themoviedb.org/docs/getting-started',
+      },{
+        icon:'https://giphy.com/static/img/favicon.png',
+        name:'GIPHY',
+        abbreviation:'gif图库、特效库想得到的库。',
+        link:'https://giphy.com/',
+      },
+      {
+        icon:'https://picsum.photos/assets/images/favicon/favicon-16x16.png',
+        name:'随机图片',
+        abbreviation:'乱数图片',
+        link:'https://picsum.photos/',
+      }
 
+    ]
+  },
+  {
+    name:'开发社区',
+    nav:[
+      {
+        icon:'https://www.cnblogs.com/images/logo.svg?v=2SMrXdIvlZwVoB1akyXm38WIKuTHVqvGD0CweV-B6cY',
+        name:'博客园',
+        abbreviation:'开发者的网上家园',
+        link:'https://www.cnblogs.com/'
+      },
+      {
+        icon:'https://leetcode.cn/favicon.ico',
+        name:'力扣',
+        abbreviation:'力扣 (LeetCode) 全球极客挚爱的技术成长平台',
+        link:'https://leetcode.cn/'
+      }, {
+        icon:'https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png',
+        name:'稀土掘金',
+        abbreviation:'专注于技术分享的社区平台',
+        link:'https://juejin.cn/'
+      }, {
+        icon:'https://g.csdnimg.cn/static/logo/favicon32.ico',
+        name:'csdn',
+        abbreviation:'专业开发者社区',
+        link:'https://www.csdn.net/'
+      }, {
+        icon:'https://www.oschina.net/img/osclogo/svg/OSTools_logo_1.svg',
+        name:'oschina',
+        abbreviation:'中文开源技术交流社区',
+        link:'https://www.oschina.net/'
+      },
     ]
   },
 ]
@@ -377,12 +480,10 @@ const containerRef = ref<HTMLElement | null>(null) // ref
 const currentActive = ref(''); // 当前锚点
 const offset = 30; // 设置偏移量
 
-
 // 点击card
 const change =(link : string)=>{
   window.open(link, '_blank');
 }
-
 
 // 滚动时间 主要为了监测滚动高亮锚点
 const handleScroll = () => {
@@ -466,7 +567,7 @@ onBeforeUnmount(() => {
           ">
             <div class="flex gap-2 items-center ">
               <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
-                <img class="h-8  w-8 rounded-sm" :src="nav.icon ? nav.icon : '../../images/logo.png'" alt="">
+                <img class="h-8  w-8 rounded-sm" :src="nav.icon ? nav.icon : 'https://avatars.githubusercontent.com/u/52589990?v=4'" alt="">
               </div>
               <span class="font-bold">  {{nav.name}}</span>
             </div>
@@ -489,7 +590,6 @@ onBeforeUnmount(() => {
         </div>
       </el-affix>
     </div>
-
   </div>
 </template>
 
@@ -503,4 +603,15 @@ onBeforeUnmount(() => {
 .el-anchor__marker{
   background-color: #a8b1ff !important;
 }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-30%); } /* 这里调整为 -50% */
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(0); } /* 这里调整为 -50% */
+}
+
 </style>

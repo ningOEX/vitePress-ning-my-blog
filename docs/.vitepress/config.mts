@@ -24,7 +24,7 @@ export default defineConfig({
           { text: 'HTML', link: '/homePage/htmlFile/' },
           { text: 'CSS', link: '/homePage/cssFile/' },
           { text: 'Vue', link: '/homePage/vueFile/' },
-          { text: '周边', link: '/homePage/linkFile/' }
+
         ]
       },
     ],
