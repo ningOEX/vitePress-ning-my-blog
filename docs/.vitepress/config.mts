@@ -48,7 +48,7 @@ export default defineConfig({
             { text: 'Element-plus使用', link: '/usePage/useElement-plus.md' },
           ],
         }
-      ]
+      ],
     },
     search:{
       provider: 'local'

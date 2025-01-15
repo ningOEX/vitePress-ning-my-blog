@@ -35,7 +35,8 @@ const Labels = [
   "CLI",
   "算法与结构",
   "JS新特性",
-  "微信小程序"
+  "微信小程序",
+  "Promise",
 ];
 
 const bgHandle = (i: number) => {
