@@ -1,8 +1,10 @@
 ---
+title: 图赏
+description: 随机图赏 轻松一刻
 layout: imagesView
 ---
 
-# imgae
+# images
 
 - 磨砂机（套装） * 1100R
 - 预估130² 地板贴 （大厅）

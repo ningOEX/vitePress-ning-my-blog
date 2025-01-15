@@ -164,7 +164,7 @@ const navLists = [
         link:'https://luckycola.com.cn/public/dist/#/',
       },
       {
-        icon:'https://api.aa1.cn/assets/img/favicon.png',
+        icon:'',
         name:'ChatGPT中国版',
         abbreviation:'国内开源API平台 千人开发者，免费接口',
         link:'https://api.aa1.cn/',
@@ -478,7 +478,7 @@ const navLists = [
 
 const containerRef = ref<HTMLElement | null>(null) // ref
 const currentActive = ref(''); // 当前锚点
-const offset = 30; // 设置偏移量
+const offset = 0; // 设置偏移量
 
 // 点击card
 const change =(link : string)=>{
@@ -494,7 +494,6 @@ const handleScroll = () => {
   // 如果滚动到底部，直接返回
   if (scrollPosition + windowHeight >= documentHeight) {
     currentActive.value = `part${navLists.length - 1}`; // 设置为最后一个部分
-    return;
   }else{
     currentActive.value = '';
   }
@@ -503,7 +502,7 @@ const handleScroll = () => {
     const element = document.getElementById(`part${index}`);
     if (element) {
       const offsetTop = element.offsetTop;
-      const offsetHeight = element.offsetHeight;
+      const offsetHeight = element.offsetHeight
       if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight

@@ -35,6 +35,7 @@ const description = [
   }
 ] //数据
 
+
 const timer = ref(null); //定时器
 
 const currentIndex = ref(null); //当前索引

@@ -1,5 +1,4 @@
 import DefaultTheme from 'vitepress/theme';
-import {nextTick} from "vue"
 
 // components
 import UpdatedTime from '../../components/UpdatedTime.vue';
@@ -25,7 +24,6 @@ export default {
         app.component('navContent', navContent);
         app.component('ImagesView',ImagesView)
         app.use(ElementPlus);
-
     },
 
 };
