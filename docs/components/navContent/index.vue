@@ -6,7 +6,7 @@ import ImgaesView from "../imgaesView.vue";
 // card  数据源 static
 const navLists = [
   {
-    name:'开门见山',
+    name:'知识基石',
     nav:[
       {
         icon:'https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png',
@@ -22,6 +22,7 @@ const navLists = [
       }
     ]
   },
+
   {
     name:'神奇工具',
     nav:[
@@ -54,7 +55,12 @@ const navLists = [
         abbreviation:'开发者好用百宝箱',
         link:'https://devtool.tech/',
       },
-
+      {
+        icon:'https://api.jquery.com/wp-content/themes/api.jquery.com/i/favicon.ico',
+        name:'Jquery(中文网)',
+        abbreviation:'快速、小巧、功能丰富的JavaScript库',
+        link:'https://asprain.oss-cn-hangzhou.aliyuncs.com/',
+      },
     ]
   },
   {
@@ -71,6 +77,12 @@ const navLists = [
         name:'Mock.js',
         abbreviation:'生成随机数据，拦截 Ajax 请求',
         link:'http://mockjs.com/',
+      },
+      {
+        icon:'https://cdn.apifox.com/logo/apifox-logo-256.png',
+        name:'Apifox',
+        abbreviation:'API 测试',
+        link:'https://app.apifox.com/',
       }
 
     ]
@@ -438,6 +450,12 @@ const navLists = [
         name:'随机图片',
         abbreviation:'乱数图片',
         link:'https://picsum.photos/',
+      },
+      {
+        icon:'https://uiverse.io/favicon-32x32.png',
+        name:'verse',
+        abbreviation:'最大的开源UI库',
+        link:'https://uiverse.io/',
       }
 
     ]
