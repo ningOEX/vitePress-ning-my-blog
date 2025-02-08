@@ -28,6 +28,7 @@ export default defineConfig({
 
         ]
       },
+      { text: "AI智能", link: '/aiPage/' },
     ],
 
     sidebar: {

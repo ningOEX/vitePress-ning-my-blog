@@ -5,9 +5,9 @@ const title = "精选";
 
 const list = [
   {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
+    title: "DeepSeek 对前端开发的影响及开发人员的机遇",
+    link: "aiPage/deepSeek",
+    time: "2025/2",
   },
   {
     title: "vitePress如何使用插件",
