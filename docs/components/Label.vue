@@ -27,18 +27,18 @@ const Labels = [
   "BOM",
   "碎片",
   "日记",
-  "OEX",
-  "早晨豆浆",
+  "DeepSeek",
+  "AI工具",
   "码农",
-  "搬运工",
+  "技术发展",
   "构建工具",
   "CLI",
   "算法与结构",
   "JS新特性",
   "微信小程序",
   "Promise",
+  "编程学习",
 ];
-
 const bgHandle = (i: number) => {
   let className = "";
   if (i % 1 === 0) className = "note-1 br "; // 1的倍数

@@ -1,7 +1,7 @@
 ---
 title: DeepSeek
 description: DeepSeek 对前端开发的影响及开发人员的机遇
-updated: 2025-2-28
+updated: 2025-2-8
 ---
 
 # DeepSeek 对前端开发的影响及开发人员的机遇

@@ -6,13 +6,13 @@ const title = "精选";
 const list = [
   {
     title: "DeepSeek 对前端开发的影响及开发人员的机遇",
-    link: "aiPage/deepSeek",
-    time: "2025/2",
+    link: "aiPage/deepSeek/deepSeek-1",
+    time: "2025/2-8",
   },
   {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
+    title: "如何在新时代利用DeepSeek发展个人特长——技术爱好者的进阶指南✔",
+    link: "aiPage/deepSeek/deepSeek-2",
+    time: "2024/2-10",
   },
   {
     title: "vitePress如何使用插件",
@@ -40,6 +40,9 @@ const list = [
     time: "2024/12",
   },
 ];
+
+
+
 </script>
 
 <template>

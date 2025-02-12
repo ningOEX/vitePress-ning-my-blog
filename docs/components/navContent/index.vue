@@ -157,7 +157,14 @@ const navLists = [
   },
   {
     name:'AI 神通',
-    nav:[{
+    nav:[
+      {
+        icon:'https://gimg3.baidu.com/search/src=http%3A%2F%2Fgips0.baidu.com%2Fit%2Fu%3D501085362%2C3268784142%26fm%3D3030%26app%3D3030%26f%3DJPEG%3Fw%3D338%26h%3D225%26s%3D46F088725076FF8208BF9FDD020080AC&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=f242,150&n=0&g=0n&q=100&fmt=auto?sec=1739466000&t=ce30709e509a70ab2b22609758f16b7c',
+        name:'DeepSeek',
+        abbreviation:'国产之光 DeepSeek AI人工智能',
+        link:'https://www.deepseek.com/',
+      },
+        {
       icon:'https://psc2.cf2.poecdn.net/assets/_next/static/media/poeFullWhiteMultibot.e2e2745a.svg',
       name:'Poe',
       abbreviation:'遇事可问 AI',
