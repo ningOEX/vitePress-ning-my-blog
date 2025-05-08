@@ -1,536 +1,52 @@
 <script setup lang="ts">
 //
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import ImgaesView from "../imgaesView.vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import data from "./navContent.json";
 
-// card  数据源 static
-const navLists = [
-  {
-    name:'知识基石',
-    nav:[
-      {
-        icon:'https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png',
-        name:'mdn',
-        abbreviation:'记录网络技术，包括CSS，HTML和JavaScript，从2005年开始',
-        link:'https://developer.mozilla.org/zh-CN/',
-      },
-      {
-        icon:'https://quickref.cn/icons/favicon.svg',
-        name:'Quick Reference',
-        abbreviation:'为了方便开发人员查阅技术栈，分享这份快速参考备忘清单【速查表】',
-        link:'https://quickref.cn/index.html',
-      }
-    ]
-  },
+interface Nav {
+  abbreviation: string; //简介
+  icon: string; // 图标
+  link: string; // 链接
+  name: string; // 名称
+}
 
-  {
-    name:'神奇工具',
-    nav:[
-      {
-        icon:'https://bennettfeely.com/clippy/pics/favicon.png',
-        name:'clippy',
-        abbreviation:'css 所见即所得图片图案裁剪',
-        link:'https://bennettfeely.com/clippy/',
-      },
-      {
-        icon:'https://auto-plugin.github.io/index/autofit.js/logo.png',
-        name:'autofit.js',
-        abbreviation:'单页面比例自适应',
-        link:'https://auto-plugin.github.io/index/autofit.js/use.html',
-      },
-      {
-        icon:'https://momentjs.com/static/img/moment-favicon.png',
-        name:'Moment.js',
-        abbreviation:'在JavaScript中解析、验证、操作和显示日期和时间。',
-        link:'https://momentjs.com/',
-      },
-      {
-        icon:'',
-        name:'nprogress',
-        abbreviation:'一个视觉安慰剂的进度条',
-        link:'https://github.com/rstacruz/nprogress',
-      },{
-        icon:'https://devtool.tech/logo.svg',
-        name:'开发者武器库',
-        abbreviation:'开发者好用百宝箱',
-        link:'https://devtool.tech/',
-      },
-      {
-        icon:'https://api.jquery.com/wp-content/themes/api.jquery.com/i/favicon.ico',
-        name:'Jquery(中文网)',
-        abbreviation:'快速、小巧、功能丰富的JavaScript库',
-        link:'https://asprain.oss-cn-hangzhou.aliyuncs.com/',
-      },
-    ]
-  },
-  {
-    name:'网络请求相关',
-    nav:[
-      {
-        icon:'http://axios-http.com/assets/favicon.ico',
-        name:'Axios',
-        abbreviation:'易用、简洁且高效的http库',
-        link:'http://www.axios-js.com/',
-      },
-      {
-        icon:'',
-        name:'Mock.js',
-        abbreviation:'生成随机数据，拦截 Ajax 请求',
-        link:'http://mockjs.com/',
-      },
-      {
-        icon:'https://cdn.apifox.com/logo/apifox-logo-256.png',
-        name:'Apifox',
-        abbreviation:'API 测试',
-        link:'https://app.apifox.com/',
-      }
+interface NavContent {
+  name: string; // 名称
+  nav: Nav[]; // 导航
+}
 
-    ]
-  },
-    {
-    name:'动画库',
-    nav:[
-    {
-      icon:'https://scrollrevealjs.org/img/logomark.svg',
-      name:'scrollReveal',
-      abbreviation:'将元素滚动到视图中时制作动画',
-      link:'https://scrollrevealjs.org/',
-    },
-    {
-      icon:'https://user-images.githubusercontent.com/4596862/58807621-67aeec00-85e6-11e9-8e3a-3fe4123ee76c.png',
-      name:'locomotive-scroll',
-      abbreviation:'视口中元素的检测&带视差的平滑滚动',
-      link:'https://locomotivemtl.github.io/locomotive-scroll/',
-    },
-    {
-      icon:'https://animate.style/img/favicon.ico',
-      name:'Animate.css',
-      abbreviation:'CSS动画的跨浏览器库',
-      link:'https://animate.style/',
-    },
-    {
-      icon:'https://raw.githubusercontent.com/juliangarnier/anime/master/documentation/assets/img/animejs-v3-header-animation.gif',
-      name:'Anime.js',
-      abbreviation:'JavaScript动画引擎',
-      link:'https://animejs.com/documentation/#propertyKeyframes',
-    },
-    {
-      icon:'',
-      name:'AOS',
-      abbreviation:'卷轴库动画',
-      link:'https://michalsnik.github.io/aos/',
-    }
-  ]
-},
-  {
-    name:'可视化视图',
-    nav:[
-      {
-        icon:'https://echarts.apache.org/zh/images/favicon.png?_v_=20240226',
-        name:'Echarts',
-        abbreviation:'一个基于 JavaScript 的开源可视化图表库',
-        link:'https://echarts.apache.org/zh/index.html',
-      },
-      {
-        icon:'https://www.chartjs.com.cn/img/chartjs-logo.svg',
-        name:'Chart.js',
-        abbreviation:'为设计和开发人员准备的简单、灵活的 JavaScript 图表工具',
-        link:'https://www.chartjs.com.cn/',
-      }, {
-        icon:'https://ppchart.com/favicon.ico',
-        name:'PPChart',
-        abbreviation:'丰富多彩，简易 直观',
-        link:'https://ppchart.com/#/',
-      }, {
-        icon:'https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*7svFR6wkPMoAAAAAAAAAAAAADmJ7AQ/original',
-        name:'AntV G2',
-        abbreviation:'G2 是一套简洁的渐进式可视化语法，用于报表搭建、数据探索以及可视化叙事',
-        link:'https://g2.antv.antgroup.com/',
-      }, {
-        icon:'https://threejs.org/files/favicon.ico',
-        name:'three.js',
-        abbreviation:'一个构建3D试图效果的强大库',
-        link:'https://threejs.org/',
-      },
+// card 数据源
+const navLists = ref<NavContent[]>([]);
 
-    ]
-  },
-  {
-    name:'AI 神通',
-    nav:[
-      {
-        icon:'https://gimg3.baidu.com/search/src=http%3A%2F%2Fgips0.baidu.com%2Fit%2Fu%3D501085362%2C3268784142%26fm%3D3030%26app%3D3030%26f%3DJPEG%3Fw%3D338%26h%3D225%26s%3D46F088725076FF8208BF9FDD020080AC&refer=http%3A%2F%2Fwww.baidu.com&app=2021&size=f242,150&n=0&g=0n&q=100&fmt=auto?sec=1739466000&t=ce30709e509a70ab2b22609758f16b7c',
-        name:'DeepSeek',
-        abbreviation:'国产之光 DeepSeek AI人工智能',
-        link:'https://www.deepseek.com/',
-      },
-        {
-      icon:'https://psc2.cf2.poecdn.net/assets/_next/static/media/poeFullWhiteMultibot.e2e2745a.svg',
-      name:'Poe',
-      abbreviation:'遇事可问 AI',
-      link:'https://poe.com/',
-    },
-      {
-        icon:'https://luckycola.com.cn/public/docs/logo.png',
-        name:'百度文心',
-        abbreviation:'百度文心一言语言大模型的智能文本对话AI机器人API',
-        link:'https://luckycola.com.cn/public/docs/shares/api/openWx.html',
-      },
-      {
-        icon:'https://s21.ax1x.com/2024/08/10/pASBnT1.jpg',
-        name:'LuckyColaAI',
-        abbreviation:'依托AI智能引擎的工具网站',
-        link:'https://luckycola.com.cn/public/dist/#/',
-      },
-      {
-        icon:'',
-        name:'ChatGPT中国版',
-        abbreviation:'国内开源API平台 千人开发者，免费接口',
-        link:'https://api.aa1.cn/',
-      }
-    ]
-  },
-  {
-    name:'Vue3 生态杀器',
-    nav:[{
-      icon:'https://cn.vuejs.org//logo.svg',
-      name:'Vue.js',
-      abbreviation:'渐进式JavaScript 框架',
-      link:'https://cn.vuejs.org/',
-    },
-      {
-        icon:'https://cn.vuejs.org//logo.svg',
-        name:'Vue Router',
-        abbreviation:'为 Vue.js 提供富有表现力、可配置的、方便的路由',
-        link:'https://router.vuejs.org/zh/',
-      },
-      {
-        icon:'https://pinia.vuejs.org/logo.svg',
-        name:'Pinia',
-        abbreviation:'符合直觉的 Vue.js 状态管理库',
-        link:'https://pinia.vuejs.org/zh/',
-      },
-      {
-        icon:'https://element-plus.org/apple-touch-icon.png',
-        name:'Element Plus',
-        abbreviation:'基于 Vue 3，面向设计师和开发者的组件库',
-        link:'https://element-plus.org/zh-CN/',
-      },
-      {
-        icon:'https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-dark-atom.svg',
-        name:'Vuetify',
-        abbreviation:'开源UI库，拥有精美的手工制作的Vue组件。',
-        link:'https://vuetifyjs.com/en/',
-      },
-      {
-        icon:'https://nuxt.com.cn/icon.png',
-        name:'Nuxt',
-        abbreviation:'Nuxt是一个 开源框架 ，使得Web开发变得直观且强大',
-        link:'https://nuxt.com.cn/',
-      },{
-        icon:'https://www.naiveui.com/assets/naivelogo-BdDVTUmz.svg',
-        name:'Naive UI',
-        abbreviation:'一个 Vue 3 组件库比较完整，主题可调，使用 TypeScript',
-        link:'https://www.naiveui.com/zh-CN/os-theme',
-      },{
-        icon:'https://next.antdv.com/assets/logo.1ef800a8.svg',
-        name:'Ant Design Vue',
-        abbreviation:'一个基于Ant设计和Vue的企业级UI组件',
-        link:'https://antdv.com/components/overview',
-      },
-      {
-        icon:'https://ark-ui.com/favicon.ico',
-        name:'ark',
-        abbreviation:'使用React、Svelte、Vue和Solid构建您的设计系统',
-        link:'https://ark-ui.com/',
-      },{
-        icon:'https://ui.vuestic.dev/favicon.ico',
-        name:'vuestic-ui',
-        abbreviation:'旨在实现快速开发、易于维护和高度可访问性',
-        link:'https://ui.vuestic.dev/',
-      },
-      {
-        icon:'https://www.layui-vue.com/favicon.ico',
-        name:'layui - vue',
-        abbreviation:'layui-vue是一套 Vue 3.0 的桌面端组件库.',
-        link:'https://www.layui-vue.com/zh-CN/components/fullscreen',
-      },{
-        icon:'https://www.radix-vue.com/logo.svg',
-        name:'Radix Vue',
-        abbreviation:'基数UI原语的Vue端口',
-        link:'https://www.radix-vue.com/',
-      },
-    ]
-  },
-  {
-    name:'CSS 妙手回春',
-    nav:[{
-      icon:'https://less.bootcss.com/public/ico/favicon.ico',
-      name:'Less',
-      abbreviation:'在浏览器环境中使用 Less',
-      link:'https://less.bootcss.com/',
-    },
-      {
-        icon:'https://sass-lang.com/assets/img/logos/logo.svg',
-        name:'Scss',
-        abbreviation:'世界上最成熟、最稳定、最强大的专业级CSS扩展语言',
-        link:'https://sass-lang.com/',
-      },
-      {
-        icon:'https://www.tailwindcss.cn/favicons/apple-touch-icon.png?v=3',
-        name:'tailwindcss',
-        abbreviation:'可快速构建美观的网站',
-        link:'https://www.tailwindcss.cn/',
-      },{
-        icon:'https://unocss.nodejs.cn/logo.svg',
-        name:'UnoCSS',
-        abbreviation:'即时按需的原子化 CSS 引擎',
-        link:'https://unocss.nodejs.cn/',
-      },
-      {
-        icon:'https://primer.style/css/storybook/favicon.svg',
-        name:'primer Css',
-        abbreviation:'GitHub 所使用的 CSS 框架',
-        link:'https://primer.style/css/storybook/?path=/docs/introduction--docs',
-      },
-
-    ]
-  },
-  {
-    name:'前端 大侦探',
-    nav:[{
-      icon:'https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1721497202689',
-      name:'Boot CDN',
-      abbreviation:'稳定、快速、免费的前端开源项目 CDN 加速服务',
-      link:'https://www.bootcdn.cn/',
-    },
-      {
-        icon:'https://static-production.npmjs.com/1996fcfdf7ca81ea795f67f093d7f449.png',
-        name:'npm',
-        abbreviation:'向社区开发人员免费提供有用的工具。',
-        link:'https://www.npmjs.com/',
-      },
-      {
-        icon:'https://github.com/fluidicon.png',
-        name:'GitHub',
-        abbreviation:'世界上最广泛采用的人工智能开发平台',
-        link:'https://github.com/',
-      },
-      {
-        icon:'https://gitee.com/assets/favicon_message.ico?1581387642851',
-        name:'gitee',
-        abbreviation:'国内领先的企业级研发效能和开源代码托管平台',
-        link:'https://gitee.com/',
-      },
-
-    ]
-  },
-  {
-    name:'icon 图标',
-    nav:[{
-      icon:'https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg',
-      name:'iconfont',
-      abbreviation:'阿里妈妈矢量图标',
-      link:'https://www.iconfont.cn/',
-    },
-      {
-        icon:'https://erikflowers.github.io/weather-icons/css/img/sky.jpg',
-        name:'Weather Icons',
-        abbreviation:'222个天气主题图标和CSS',
-        link:'https://erikflowers.github.io/weather-icons/',
-      },{
-        icon:'https://api.iconify.design/zondicons:align-center.svg',
-        name:'icones',
-        abbreviation:'由Iconify支持的带有即时搜索的图标浏览器',
-        link:'https://icones.js.org/',
-      },{
-        icon:'https://feathericons.com/favicon-16x16.png',
-        name:'Feather',
-        abbreviation:'简单漂亮的开源图标',
-        link:'https://feathericons.com/',
-      },{
-        icon:'https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg',
-        name:'Google Fonts',
-        abbreviation:'提供Google字体调试工具、Google字体在线预览功能',
-        link:'https://fonts.google.com/',
-      },{
-        icon:'https://icons.getbootstrap.com/assets/img/favicons/favicon.ico',
-        name:'Bootstrap Icons',
-        abbreviation:'免费、高质量、开源的图标库，包含2000多个图标',
-        link:'https://icons.getbootstrap.com/',
-      },
-
-    ]
-  },
-  {
-    name:'小程序 食物链',
-    nav:[{
-      icon:'https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png',
-      name:'微信官方文档',
-      abbreviation:'提供简单、高效的应用开发框架和丰富的组件及API',
-      link:'https://developers.weixin.qq.com/miniprogram/dev/framework/',
-    },
-      {
-        icon:'https://res.wx.qq.com/wxopenres/htmledition/images/favicon324c17f2.ico',
-        name:'微信公众平台',
-        abbreviation:'发版部署以及管理平台',
-        link:'https://mp.weixin.qq.com/',
-      },{
-        icon:'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon.png?v=1556263038788',
-        name:'uniapp',
-        abbreviation:'一套代码可发布多个平台，uni-app在手，做啥都不愁',
-        link:'https://www.dcloud.io/',
-      },
-      {
-        icon:'https://uviewui.com/common/logo.png',
-        name:'uView',
-        abbreviation:'uView UI，是全面兼容nvue的uni-app生态框架',
-        link:'https://uviewui.com/',
-      },
-
-    ]
-  },
-  {
-    name:'静态站点生成器相关',
-    nav:[
-      {
-        icon:'https://vitejs.cn/vitepress/vitepress-logo-large.webp',
-        name:'vitePress',
-        abbreviation:'由 Vite 和 Vue 驱动的静态站点生成器',
-        link:'https://vitejs.cn/vitepress/',
-      },{
-        icon:'https://hexo.io/logo.png',
-        name:'Hexo',
-        abbreviation:'快速、简洁且高效的博客框架 支持一键部署。',
-        link:'https://hexo.io/zh-cn/',
-      },{
-        icon:'https://pic.rmb.bdstatic.com/bjh/d0ce11d7f47537cab151b3fc841a4a84833.png',
-        name:'Markdown 语法',
-        abbreviation:'Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版',
-        link:'https://markdown.com.cn/basic-syntax/',
-      },{
-        icon:'https://vercel.com/vc-ap-vercel-marketing/_next/static/media/vercel-logotype-dark.e8c0a742.svg',
-        name:'Vercel',
-        abbreviation:'Vercel提供开发工具和云基础设施来构建、扩展和保护更快、更个性化的web。',
-        link:'https://vercel.com/',
-      },
-
-    ]
-  },
-  {
-    name:'图源素材开源相关',
-    nav:[
-      {
-        icon:'https://unsplash.com/apple-touch-icon.png',
-        name:'Unsplash',
-        abbreviation:'互联网的视觉资源由各地的创造者提供动力。',
-        link:'https://unsplash.com/',
-      },
-      {
-        icon:'https://pixabay.com/favicon.ico',
-        name:'pixoboy',
-        abbreviation:'令人惊叹的免版税图像',
-        link:'https://pixabay.com/',
-      },{
-        icon:'https://www.pexels.com/assets/static/images/meta/favicon.ico',
-        name:'免费素材图片',
-        abbreviation:'才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。',
-        link:'https://www.pexels.com/zh-cn/',
-      },{
-        icon:'https://www.freepik.com/favicon.ico',
-        name:'FREEPlK',
-        abbreviation:'找到数百万张让你的观众哑口无言的高质量照片',
-        link:'https://www.freepik.com/popular-photos#from_element=home_verticals',
-      },{
-        icon:'https://files.readme.io/29c6fee-blue_short.svg',
-        name:'TMDB',
-        abbreviation:'电影数据库 (TMDB) API,获取电影、电视、演员和图像 API 当前可用的方法的权威列表',
-        link:'https://developer.themoviedb.org/docs/getting-started',
-      },{
-        icon:'https://giphy.com/static/img/favicon.png',
-        name:'GIPHY',
-        abbreviation:'gif图库、特效库想得到的库。',
-        link:'https://giphy.com/',
-      },
-      {
-        icon:'https://picsum.photos/assets/images/favicon/favicon-16x16.png',
-        name:'随机图片',
-        abbreviation:'乱数图片',
-        link:'https://picsum.photos/',
-      },
-      {
-        icon:'https://uiverse.io/favicon-32x32.png',
-        name:'verse',
-        abbreviation:'最大的开源UI库',
-        link:'https://uiverse.io/',
-      }
-
-    ]
-  },
-  {
-    name:'开发社区',
-    nav:[
-      {
-        icon:'https://www.cnblogs.com/images/logo.svg?v=2SMrXdIvlZwVoB1akyXm38WIKuTHVqvGD0CweV-B6cY',
-        name:'博客园',
-        abbreviation:'开发者的网上家园',
-        link:'https://www.cnblogs.com/'
-      },
-      {
-        icon:'https://leetcode.cn/favicon.ico',
-        name:'力扣',
-        abbreviation:'力扣 (LeetCode) 全球极客挚爱的技术成长平台',
-        link:'https://leetcode.cn/'
-      }, {
-        icon:'https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png',
-        name:'稀土掘金',
-        abbreviation:'专注于技术分享的社区平台',
-        link:'https://juejin.cn/'
-      }, {
-        icon:'https://g.csdnimg.cn/static/logo/favicon32.ico',
-        name:'csdn',
-        abbreviation:'专业开发者社区',
-        link:'https://www.csdn.net/'
-      }, {
-        icon:'https://www.oschina.net/img/osclogo/svg/OSTools_logo_1.svg',
-        name:'oschina',
-        abbreviation:'中文开源技术交流社区',
-        link:'https://www.oschina.net/'
-      },
-    ]
-  },
-]
-
-const containerRef = ref<HTMLElement | null>(null) // ref
-const currentActive = ref(''); // 当前锚点
+const containerRef = ref<HTMLElement | null>(null); // ref
+const currentActive = ref<string>(""); // 当前锚点
 const offset = 0; // 设置偏移量
 
 // 点击card
-const change =(link : string)=>{
-  window.open(link, '_blank');
-}
+const change = (link: string) => {
+  window.open(link, "_blank");
+};
 
 // 滚动时间 主要为了监测滚动高亮锚点
 const handleScroll = () => {
   const scrollPosition = window.scrollY + offset; // 加上偏移量
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;
-
   // 如果滚动到底部，直接返回
   if (scrollPosition + windowHeight >= documentHeight) {
-    currentActive.value = `part${navLists.length - 1}`; // 设置为最后一个部分
-  }else{
-    currentActive.value = '';
+    currentActive.value = `part${navLists.value.length - 1}`; // 设置为最后一个部分
+  } else {
+    currentActive.value = "";
   }
 
-  navLists.forEach((item, index) => {
+  navLists.value.forEach((item, index) => {
     const element = document.getElementById(`part${index}`);
     if (element) {
       const offsetTop = element.offsetTop;
-      const offsetHeight = element.offsetHeight
+      const offsetHeight = element.offsetHeight;
       if (
-          scrollPosition >= offsetTop &&
-          scrollPosition < offsetTop + offsetHeight
+        scrollPosition >= offsetTop &&
+        scrollPosition < offsetTop + offsetHeight
       ) {
         currentActive.value = `part${index}`;
       }
@@ -539,103 +55,135 @@ const handleScroll = () => {
 };
 
 // 点击锚点进行滚动到对应侧边栏
-const scrollToSection = (id : string) => {
+const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset
-    element.scrollIntoView({ behavior: 'smooth' });
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY - offset;
+    element.scrollIntoView({ behavior: "smooth" });
   }
 };
 
 // 注册滚动时间
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+onMounted(async () => {
+  window.addEventListener("scroll", handleScroll);
+  navLists.value = data.navContent;
 });
 
 // 销毁滚动时间
 onBeforeUnmount(() => {
   // 清除事件监听器
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener("scroll", handleScroll);
 });
-
 </script>
 
 <template>
-  <div ref="containerRef"  class="w-full p-4 relative">
-    <div class="px-2 md:px-20 lgg:px-28  xl:px-40 2xl:px-64">
-      <p class="text-2xl font-bold my-6">指南针</p>
-      <div v-for="(item,index) in navLists" :key="index"  class="mb-8 " :id="`part${index}`">
-        <div class="line w-full h-[1px] my-4 bg-black/20 dark:bg-white/10  box-border "></div>
-        <p class="text-xl font-bold my-6" >{{item.name}}</p>
-        <div class="grid
-        grid-cols-2
-        md:grid-cols-3
-        lg:grid-cols-3
-        xl:grid-cols-4
-        2xl:grid-cols-5
-        gap-4
-        ">
-          <div v-for="(nav,index) in item.nav"
-               :key="index"
-               @click="change(nav.link)"
-               class="bg-gray-300/30 dark:bg-black/20
-               py-2 px-2
-               min-w-32
-               md:min-w-52
-               grid gap-2
-               cursor-pointer
-               border
-               rounded-md
-               hover:bg-[#a8b1ff]
-               dark:border-gray-500/30 dark:hover:border-[#a8b1ff] dark:hover:bg-black/20
-          ">
-            <div class="flex gap-2 items-center ">
-              <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
-                <img class="h-8  w-8 rounded-sm" :src="nav.icon ? nav.icon : 'https://avatars.githubusercontent.com/u/52589990?v=4'" alt="">
+  <div ref="containerRef" class="w-full p-2 relative">
+    <div class="px-4 md:px-6 lg:px-6 xl:px-6 2xl:px-64">
+      <div class="flex flex-wrap">
+        <p class="text-2xl font-bold my-6">指南针</p>
+        <div
+          v-for="(item, index) in navLists"
+          :key="index"
+          class="mb-8 w-full"
+          :id="`part${index}`"
+        >
+          <div
+            class="line w-full h-[1px] my-4 bg-black/20 dark:bg-white/10 box-border"
+          ></div>
+          <p class="text-xl font-bold my-6">{{ item.name }}</p>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
+          >
+            <div
+              v-for="(nav, index) in item.nav"
+              :key="index"
+              @click="change(nav.link)"
+              class="bg-gray-300/30 dark:bg-black/20 py-2 px-2 min-w-32 md:min-w-52 grid gap-2 cursor-pointer border rounded-md hover:bg-[#a8b1ff] dark:border-gray-500/30 dark:hover:border-[#a8b1ff] dark:hover:bg-black/20"
+            >
+              <div class="flex gap-2 items-center">
+                <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
+                  <img
+                    class="h-8 w-8 rounded-sm"
+                    :src="
+                      nav.icon
+                        ? nav.icon
+                        : 'https://avatars.githubusercontent.com/u/52589990?v=4'
+                    "
+                    alt=""
+                  />
+                </div>
+                <span class="font-bold"> {{ nav.name }}</span>
               </div>
-              <span class="font-bold">  {{nav.name}}</span>
+              <span class="text-xs text-slate-500 line-clamp-2">{{
+                nav.abbreviation
+              }}</span>
             </div>
-            <span class="text-xs text-slate-500 line-clamp-2">{{nav.abbreviation}}</span>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="opacity-0 xl:opacity-100 absolute top-0 xl:right-2 2xl:right-20 ">
-      <el-affix :offset="120">
-        <p class="text-sm pb-2 cursor-default animate-bounce">指南针</p>
-        <div class="w-40 border-l border-gray-500/50 pl-1  box-border">
-          <ul class="w-full">
-            <li v-for="(item,index) in navLists" :key="index"
-                @click.prevent="scrollToSection(`part${index}`)"
-                class="text-sm py-1 cursor-pointer"
-                :class="currentActive === `part${index}` ? 'text-[#a8b1ff] ' : 'text-slate-500' "
-            ><span class=" pl-2 rounded-xs -ml-[5px] " :class="currentActive === `part${index}` ? ' border-[#a8b1ff] border-l-2' : 'border-[#1b1b1f]' ">{{item.name}}</span></li>
-          </ul>
+        <div
+          class="opacity-0 2xl:opacity-100 absolute top-0 xl:right-2 2xl:right-20"
+        >
+          <el-affix :offset="120">
+            <p class="text-sm pb-2 cursor-default animate-bounce">指南针</p>
+            <div class="w-40 border-l border-gray-500/50 pl-1 box-border">
+              <ul class="w-full">
+                <li
+                  v-for="(item, index) in navLists"
+                  :key="index"
+                  @click.prevent="scrollToSection(`part${index}`)"
+                  class="text-sm py-1 cursor-pointer"
+                  :class="
+                    currentActive === `part${index}`
+                      ? 'text-[#a8b1ff] '
+                      : 'text-slate-500'
+                  "
+                >
+                  <span
+                    class="pl-2 rounded-xs -ml-[5px]"
+                    :class="
+                      currentActive === `part${index}`
+                        ? ' border-[#a8b1ff] border-l-2'
+                        : 'border-[#1b1b1f]'
+                    "
+                    >{{ item.name }}</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </el-affix>
         </div>
-      </el-affix>
+      </div>
     </div>
   </div>
 </template>
 
-<style >
-.el-anchor{
+<style>
+.el-anchor {
   background-color: initial !important;
 }
-.is-active{
+.is-active {
   color: #a8b1ff !important;
 }
-.el-anchor__marker{
+.el-anchor__marker {
   background-color: #a8b1ff !important;
 }
 
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-30%); } /* 这里调整为 -50% */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30%);
+  } /* 这里调整为 -50% */
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(-30%); }
-  100% { transform: translateX(0); } /* 这里调整为 -50% */
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(0);
+  } /* 这里调整为 -50% */
 }
-
 </style>

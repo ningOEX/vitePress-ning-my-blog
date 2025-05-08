@@ -43,13 +43,7 @@ export default defineConfig({
         },
       ],
       '/usePage/': [
-        {
-          text: 'vitepress👇',
-          items: [
-            { text: 'tailwindcss使用', link: '/usePage/useTailwindcss.md' },
-            { text: 'Element-plus使用', link: '/usePage/useElement-plus.md' },
-          ],
-        }
+
       ],
     },
     search:{
