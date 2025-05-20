@@ -1,25 +1,31 @@
 <script setup lang="ts">
-import {ref} from "vue"
+import {ref,onMounted} from "vue"
 
 import { useRouter } from 'vitepress';
+
+import homeContent from "../JSON/homeContent.json"
+
+interface List{
+  title:string, // 标题
+  time:string, //  时间
+  describe:string, // 描述
+  link:string, // 链接
+}
 
 // use
 const router  = useRouter();
 
 // data
-  const list = ref([
-    {title:'AI 图像工具大全：从制图到修图，这些热门工具让你轻松成为设计大师！',time:'2025-2-12',describe:'AI 制图、修图和 P 图工具正在改变图像创作和编辑的方式。无论是专业设计师还是普通用户，都可以通过这些工具轻松实现高质量的图像处理。如果你对 AI 图像技术感兴趣，不妨尝试文章中的工具，探索更多创意可能性！',link:'/aiPage/draw/draw-1'},
-    {title:'',time:'2025-2-12',describe:'',link:''},
-    {title:'',time:'2025-2-12',describe:'',link:''},
-    {title:'',time:'2025-2-12',describe:'',link:''},
-    {title:'',time:'2025-2-12',describe:'',link:''},
-    {title:'',time:'2025-2-12',describe:'',link:''},
-  ])
+  const list = ref<List[]>([])
 
 // methods
   const handleClick = (item)=>{
     router.go(item.link)
   }
+
+onMounted(()=>{
+  list.value = homeContent.list;
+})
 
 
 </script>

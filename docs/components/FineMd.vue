@@ -13,32 +13,7 @@ const list = [
     title: "如何在新时代利用DeepSeek发展个人特长——技术爱好者的进阶指南✔",
     link: "aiPage/deepSeek/deepSeek-2",
     time: "2024/2-10",
-  },
-  {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
-  },
-  {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
-  },
-  {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
-  },
-  {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
-  },
-  {
-    title: "vitePress如何使用插件",
-    link: "usePage/",
-    time: "2024/12",
-  },
+  }
 ];
 
 

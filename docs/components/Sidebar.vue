@@ -63,8 +63,7 @@ onMounted(async () => {
       const isCurrentDate = isSameMonth(currentDate,formattedDate) // 对比是否等于当月更新
       if(isCurrentDate){
         // 当月更新日记统计
-        monthlyUpdates.value++
-        // currentDateList.value.push({date:formattedDate,title:fileStat.__pageData.description,link:fileStat.__pageData.filePath})
+        // monthlyUpdates.value++
       }
     });
 

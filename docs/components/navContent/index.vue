@@ -1,31 +1,16 @@
 <script setup lang="ts">
 //
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount,nextTick } from "vue";
 import data from "./navContent.json";
-
-interface Nav {
-  abbreviation: string; //简介
-  icon: string; // 图标
-  link: string; // 链接
-  name: string; // 名称
-}
-
-interface NavContent {
-  name: string; // 名称
-  nav: Nav[]; // 导航
-}
+import { NavContent } from "../../model/navContent";
 
 // card 数据源
 const navLists = ref<NavContent[]>([]);
 
+
 const containerRef = ref<HTMLElement | null>(null); // ref
 const currentActive = ref<string>(""); // 当前锚点
 const offset = 0; // 设置偏移量
-
-// 点击card
-const change = (link: string) => {
-  window.open(link, "_blank");
-};
 
 // 滚动时间 主要为了监测滚动高亮锚点
 const handleScroll = () => {
@@ -64,6 +49,7 @@ const scrollToSection = (id: string) => {
   }
 };
 
+
 // 注册滚动时间
 onMounted(async () => {
   window.addEventListener("scroll", handleScroll);
@@ -82,50 +68,12 @@ onBeforeUnmount(() => {
     <div class="px-4 md:px-6 lg:px-6 xl:px-6 2xl:px-64">
       <div class="flex flex-wrap">
         <p class="text-2xl font-bold my-6">指南针</p>
+        <nav-item :nav-lists="navLists"></nav-item>
         <div
-          v-for="(item, index) in navLists"
-          :key="index"
-          class="mb-8 w-full"
-          :id="`part${index}`"
-        >
-          <div
-            class="line w-full h-[1px] my-4 bg-black/20 dark:bg-white/10 box-border"
-          ></div>
-          <p class="text-xl font-bold my-6">{{ item.name }}</p>
-          <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
-          >
-            <div
-              v-for="(nav, index) in item.nav"
-              :key="index"
-              @click="change(nav.link)"
-              class="bg-gray-300/30 dark:bg-black/20 py-2 px-2 min-w-32 md:min-w-52 grid gap-2 cursor-pointer border rounded-md hover:bg-[#a8b1ff] dark:border-gray-500/30 dark:hover:border-[#a8b1ff] dark:hover:bg-black/20"
-            >
-              <div class="flex gap-2 items-center">
-                <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
-                  <img
-                    class="h-8 w-8 rounded-sm"
-                    :src="
-                      nav.icon
-                        ? nav.icon
-                        : 'https://avatars.githubusercontent.com/u/52589990?v=4'
-                    "
-                    alt=""
-                  />
-                </div>
-                <span class="font-bold"> {{ nav.name }}</span>
-              </div>
-              <span class="text-xs text-slate-500 line-clamp-2">{{
-                nav.abbreviation
-              }}</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="opacity-0 2xl:opacity-100 absolute top-0 xl:right-2 2xl:right-20"
+          class=" hidden 2xl:block w-40 absolute top-0 xl:right-2 2xl:right-20"
         >
           <el-affix :offset="120">
-            <p class="text-sm pb-2 cursor-default animate-bounce">指南针</p>
+            <p class="text-sm pb-2 cursor-default animate-bounce w-20">指南针</p>
             <div class="w-40 border-l border-gray-500/50 pl-1 box-border">
               <ul class="w-full">
                 <li
@@ -158,7 +106,7 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .el-anchor {
   background-color: initial !important;
 }
