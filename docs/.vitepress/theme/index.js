@@ -18,7 +18,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import '../style.css'; // 引入 Tailwind CSS
 import 'element-plus/dist/index.css'
 
-
 export default {
     ...DefaultTheme,
     enhanceApp({ app }) {
@@ -34,5 +33,4 @@ export default {
         app.component('collectItem',collectItem);
         app.use(ElementPlus);
     },
-
 };

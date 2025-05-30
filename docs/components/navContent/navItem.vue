@@ -8,19 +8,22 @@ const { navLists } = defineProps<{
 const collectTitle = '我的置顶';
 const topList = ref<Nav[]>([]);
 
-const handleCollectList = (list:Nav[]) => {
-  topList.value = list;
-};
+const collectEventHandle = (value :Nav[]) => {
+  topList.value = value;
+
+}
 
 </script>
 
 <template>
-  <div class="w-full">
+  <Transition>
+    <div v-if="topList?.length" class="w-full">
     <p class="text-xl font-bold my-6">{{ collectTitle }}</p>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-      <collect-item :collect-item="topList" @collect-top-list="handleCollectList"></collect-item>
+      <collect-item :collect-item="topList" ></collect-item>
     </div>
   </div>
+  </Transition>
   <div
     v-for="(item, index) in navLists"
     :key="index"
@@ -34,7 +37,7 @@ const handleCollectList = (list:Nav[]) => {
     <div
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
     >
-    <collect-item :collect-item="item.nav"></collect-item>
+    <collect-item :collect-item="item.nav" @collect-event="collectEventHandle"></collect-item>
     </div>
   </div>
 </template>
@@ -49,4 +52,15 @@ const handleCollectList = (list:Nav[]) => {
 .el-anchor__marker {
   background-color: #a8b1ff !important;
 }
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
 </style>

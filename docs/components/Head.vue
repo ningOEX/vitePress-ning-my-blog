@@ -36,16 +36,16 @@ const description = [
 ] //数据
 
 
-const timer = ref(null); //定时器
+let timer:any; //定时器
 
-const currentIndex = ref(null); //当前索引
+const currentIndex = ref(-1); //当前索引
 
 const duration = 4000; //切换的时间
 
 const currentItem = computed(() => description[currentIndex.value]); // 计算当前项
 
 const startSwitching = () => {
-  timer.value = setInterval(() => {
+  timer = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % description.length; // 更新索引
   }, duration); // 每 2000 毫秒切换一次
 };
@@ -55,7 +55,7 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
-  clearInterval(timer.value); // 组件卸载前清除定时器
+  clearInterval(timer); // 组件卸载前清除定时器
 });
 </script>
 

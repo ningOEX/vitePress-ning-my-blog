@@ -19,7 +19,7 @@ export default defineConfig({
       { text: "武器库", link: '/navContent/' },
       { text: "开发笔记", link: '/usePage/' },
       {
-        text: '前端',
+        text: '大前端',
         items: [
           { text: 'javaScript', link: '/homePage/jsFile/' },
           { text: 'HTML', link: '/homePage/htmlFile/' },
@@ -76,8 +76,6 @@ export default defineConfig({
       message: '由 vercel 提供快速的部署服务',
       copyright: 'Copyright © 2024-2025 ningOEX'
     }
-
   },
-
 
 })

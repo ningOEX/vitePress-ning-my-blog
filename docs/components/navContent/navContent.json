@@ -10,6 +10,12 @@
           "link": "https://developer.mozilla.org/zh-CN/"
         },
         {
+          "icon": "https://es6.ruanyifeng.com/favicon.ico",
+          "name": "ECMAScript 6入门",
+          "abbreviation": "大神阮一峰编写的ECMAScript 6入门教程",
+          "link": "https://es6.ruanyifeng.com/"
+        },
+        {
           "icon": "https://quickref.cn/icons/favicon.svg",
           "name": "Quick Reference",
           "abbreviation": "为了方便开发人员查阅技术栈，分享这份快速参考备忘清单【速查表】",
@@ -294,6 +300,12 @@
           "name": "Pinia",
           "abbreviation": "符合直觉的 Vue.js 状态管理库",
           "link": "https://pinia.vuejs.org/zh/"
+        },
+        {
+          "icon": "https://vue3.github.io/vue3-News/img/icons/favicon-32x32.png",
+          "name": "Vue 3.0 训练营",
+          "abbreviation": "大咖团队整理高质量的训练项，帮助你快速掌握 Vue 3.0 核心知识",
+          "link": "https://vue3.github.io/vue3-News/"
         },
         {
           "icon": "https://element-plus.org/apple-touch-icon.png",
@@ -620,6 +632,18 @@
           "abbreviation": "中文开源技术交流社区",
           "link": "https://www.oschina.net/"
         }
+      ]
+    },
+    {
+      "name": "书籍",
+      "nav": [
+        {
+          "icon": "https://www.ruanyifeng.com/road/images/published_cover_sm.jpg",
+          "name": "前方道路",
+          "abbreviation": "阮一峰编写书籍",
+          "link": "https://www.ruanyifeng.com/road/"
+        }
+        
       ]
     }
   ]

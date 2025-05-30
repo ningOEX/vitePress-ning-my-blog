@@ -8921,7 +8921,7 @@ var isStringNumber = (val) => {
 };
 var isWindow = (val) => val === window;
 
-// node_modules/element-plus/node_modules/@vueuse/shared/index.mjs
+// node_modules/element-plus/node_modules/@vueuse/core/node_modules/@vueuse/shared/index.mjs
 var __defProp$9 = Object.defineProperty;
 var __defProps$6 = Object.defineProperties;
 var __getOwnPropDescs$6 = Object.getOwnPropertyDescriptors;

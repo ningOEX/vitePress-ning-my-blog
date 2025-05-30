@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted } from "vue";
 import { Nav } from "../../model/navContent";
 
 const { collectItem } = defineProps<{ collectItem: Nav[] }>();
-
-const emits = defineEmits<{ collectTopList: [Nav[]] }>();
-
+const emit = defineEmits(['collectEvent']);
 const topList = ref<Nav[]>([]);
 
 const collectionKey = "topList";
@@ -21,10 +19,12 @@ const handleBtnClick = (nav: Nav) => {
   if (includesFunc(nav)) {
     topList.value = topList.value.filter((item) => item.link !== nav.link);
     localStorage.setItem(collectionKey, JSON.stringify(topList.value));
+    emit("collectEvent", topList.value);
     return;
   }
   topList.value.unshift(nav);
   localStorage.setItem(collectionKey, JSON.stringify(topList.value));
+  emit("collectEvent", topList.value);
 };
 
 const includesFunc = (nav: Nav) => {
@@ -35,8 +35,9 @@ onMounted(() => {
   const topListStr = localStorage.getItem(collectionKey);
   if (topListStr) {
     topList.value = JSON.parse(topListStr);
-    emits("collectTopList", topList.value);
+    emit("collectEvent", topList.value);
   }
+ 
 });
 </script>
 
