@@ -50,6 +50,17 @@ api_register
 >
 > password  密码 | 必填
 
+## 获取用户信息接口
+
+API
+```javascript
+api_get_user_info
+```
+
+参数：
+> uid  用户id | 必填
+
+
 
 ## 发布接口
 
@@ -69,6 +80,8 @@ api_upload_image
 > 
 > views 浏览 | 选填
 > 
+> type 类型 | 必填
+> 
 > uid 用户id | 必填
 
 
@@ -78,6 +91,9 @@ API
 ```javascript
 api_get_hot_week_list
 ```
+参数：
+无~
+
 
 ## 修改用户名称/密码接口
 
@@ -93,3 +109,11 @@ api_get_hot_week_list
 >
 > newPassword 新密码 | 选填
 
+## 获取类型接口
+
+API
+```javascript
+api_get_types
+```
+参数：
+无~

@@ -642,8 +642,13 @@
           "name": "前方道路",
           "abbreviation": "阮一峰编写书籍",
           "link": "https://www.ruanyifeng.com/road/"
+        },
+        {
+          "icon": "https://www.ruanyifeng.com/road/images/published_cover_sm.jpg",
+          "name": "webGL",
+          "abbreviation": "WebGL经常被当成3D API，人们总想“我可以使用WebGL和一些神奇的东西做出炫酷的3D作品",
+          "link": "https://webglfundamentals.org/webgl/lessons/zh_cn/webgl-fundamentals.html"
         }
-        
       ]
     }
   ]
