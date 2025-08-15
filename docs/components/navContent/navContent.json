@@ -39,6 +39,12 @@
           "link": "https://highlightjs.org/"
         },
         {
+          "icon": "",
+          "name": "V3DragZoom",
+          "abbreviation": "一个基于 vue3 开发的轻量、高效缩放拖拽组件，方便开发者快速实现缩放拖拽功能",
+          "link": "https://gitee.com/ericfang/v3-drag-zoom"
+        },
+        {
           "icon": "https://raw.githubusercontent.com/daybrush/moveable/master/demo/images/logo.png",
           "name": "Storybook",
           "abbreviation": "拖拉拽目标",
@@ -68,13 +74,50 @@
           "abbreviation": "一个视觉安慰剂的进度条",
           "link": "https://github.com/rstacruz/nprogress"
         },
-
         {
           "icon": "https://api.jquery.com/wp-content/themes/api.jquery.com/i/favicon.ico",
           "name": "Jquery(中文网)",
           "abbreviation": "快速、小巧、功能丰富的JavaScript库",
           "link": "https://asprain.oss-cn-hangzhou.aliyuncs.com/"
+        },
+        {
+          "icon": "",
+          "name": "PhotoSwipe",
+          "abbreviation": "PhotoSwipe 是一个 JavaScript 实现的相册组件，没有外部依赖",
+          "link": "https://photoswipe.com/"
+        },
+        {
+          "icon": "https://cdn.plyr.io/static/icons/favicon.ico",
+          "name": "plyr",
+          "abbreviation": "的 HTML5 媒体播放器,使用原生 JavaScript 没有其他依赖。支持 YouTube 和 Vimeo 。",
+          "link": "https://plyr.io/"
+        },
+        {
+          "icon": "https://p5js.org//favicon.ico",
+          "name": "p5.js",
+          "abbreviation": "p5.js 是个 JavaScript 创意编程程式库，其专注在让编程更易于使用及更加广泛的包容艺术家、设计师、教育家、初学者以及任何其他人",
+          "link": "https://p5js.org/"
+        },
+        {
+          "icon": "https://howlerjs.com/assets/images/favicon.ico",
+          "name": "howler.js",
+          "abbreviation": "现代网络的Javascript音频库。",
+          "link": "https://howlerjs.com/"
+        },
+        {
+          "icon": "",
+          "name": "moveable",
+          "abbreviation": "可移动是可拖动的、可调整大小的、可缩放的、可旋转的、可弯曲的、可挤压的、可分组的、可咬合的。",
+          "link": "https://daybrush.com/moveable/"
+        },
+        {
+          "icon": "",
+          "name": "golden-layout",
+          "abbreviation": "webapps的多窗口布局管理器",
+          "link": "https://golden-layout.com/"
         }
+
+
       ]
     },
     {
@@ -173,6 +216,12 @@
           "name": "AOS",
           "abbreviation": "卷轴库动画",
           "link": "https://michalsnik.github.io/aos/"
+        },
+        {
+          "icon": "https://gsap.com/safari-pinned-tab.svg",
+          "name": "gsap",
+          "abbreviation": "GSAP是一个用于构建高性能动画的JavaScript库，可在**各* *主流浏览器中运行。动画CSS，SVG，画布，React，Vue，WebGL，颜色，字符串，运动路径，通用对象...",
+          "link": "https://gsap.com/"
         }
       ]
     },
@@ -485,7 +534,14 @@
           "name": "Bootstrap Icons",
           "abbreviation": "免费、高质量、开源的图标库，包含2000多个图标",
           "link": "https://icons.getbootstrap.com/"
+        },
+        {
+          "icon": "https://tabler.io/favicon.ico",
+          "name": "tabler-icons",
+          "abbreviation": "套超过500个免费的麻省理工学院许可的高质量SVG图标，供你在你的网络项目中使用",
+          "link": "https://tabler.io/icons"
         }
+
       ]
     },
     {
