@@ -29,6 +29,7 @@ export default defineConfig({
         ]
       },
       { text: "AI智能", link: '/aiPage/' },
+      { text: "DEMO作品", link: '/demo/' },
     ],
 
     sidebar: {
@@ -74,7 +75,7 @@ export default defineConfig({
     },
     footer: {
       message: '由 vercel 提供快速的部署服务',
-      copyright: 'Copyright © 2024-2025 ningOEX'
+      copyright: 'Copyright © 2024-至今 ningOEX'
     }
   },
 

@@ -12,6 +12,7 @@ import iconTop from "../../components/svg/iconTop.vue"
 import iconBottom from "../../components/svg/iconBottom.vue"
 import navItem from '../../components/navContent/navItem.vue';
 import collectItem from '../../components/navContent/collectItem.vue';
+import tmdbMovie from "../../components/works/tmdbMovie.vue"
 
 // css
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -31,6 +32,7 @@ export default {
         app.component('iconBottom',iconBottom);
         app.component('navItem',navItem);
         app.component('collectItem',collectItem);
+        app.component('tmdbMovie',tmdbMovie)
         app.use(ElementPlus);
     },
 };
