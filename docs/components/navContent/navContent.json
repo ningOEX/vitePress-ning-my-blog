@@ -415,6 +415,12 @@
           "name": "Ant Design X Vue",
           "abbreviation": "Ant Design X For Vue。基于 RICH 设计范式，打造卓越 AI 界面解决方案，引领智能新体验。",
           "link": "https://antd-design-x-vue.netlify.app/"
+        },
+        {
+          "icon": "https://apollo.vuejs.org/hero.svg",
+          "name": "Vue Apollo GraphQL",
+          "abbreviation": "Vue应用程序中轻松的GraphQL！",
+          "link": "https://apollo.vuejs.org/"
         }
       ]
     },
