@@ -425,6 +425,17 @@
       ]
     },
     {
+      "name": "React生态",
+      "nav": [
+        {
+          "icon": "https://zh-hans.react.dev/favicon-32x32.png",
+          "name": "DeepSeek",
+          "abbreviation": "React",
+          "link": "https://zh-hans.react.dev/"
+        }
+      ]
+    },
+    {
       "name": "CSS 框架",
       "nav": [
         {
