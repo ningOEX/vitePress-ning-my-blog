@@ -3,6 +3,7 @@
 import { ref, onMounted, onBeforeUnmount,nextTick } from "vue";
 import data from "./navContent.json";
 import { NavContent } from "../../model/navContent";
+import navItem from "./navItem.vue"
 
 // card 数据源
 const navLists = ref<NavContent[]>([]);
