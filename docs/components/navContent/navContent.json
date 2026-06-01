@@ -30,6 +30,35 @@
       ]
     },
     {
+      "name": "AI风暴",
+      "nav": [
+        {
+          "icon": "https://web-note.cn//favicon.ico",
+          "name": "AI宝库资源导航",
+          "abbreviation": "涵盖大范围的AI模型工具，资源导航站。",
+          "link": "https://web-note.cn/"
+        },
+        {
+          "icon": "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/cc4b_web/logo-white-64.ico",
+          "name": "短剧Agent2.0",
+          "abbreviation": "全面应用Seedance 2.0模型，成为你的创作专属剧组！",
+          "link": "https://xyq.jianying.com/novel/list?utm_source=web-note.cn"
+        },
+        {
+          "icon": "https://www.waytoagi.com/favicon.ico",
+          "name": "WayToAGI",
+          "abbreviation": "因 AI 而强大,学习大牛思维。",
+          "link": "https://www.waytoagi.com/zh"
+        },
+        {
+          "icon": "https://colbymchenry.github.io/codegraph/favicon.svg",
+          "name": "codegraph",
+          "abbreviation": "将整个项目整理成一张地图，无需一行行读代码，快速理解项目结构。",
+          "link": "https://colbymchenry.github.io/codegraph/"
+        }
+      ]
+    },
+    {
       "name": "实用工具",
       "nav": [
         {
