@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted,defineProps,defineEmits } from "vue";
 import { Nav } from "../../model/navContent";
 
 const { collectItem } = defineProps<{ collectItem: Nav[] }>();

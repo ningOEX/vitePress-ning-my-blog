@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref,watch } from "vue";
+import { ref,defineProps } from "vue";
 import { NavContent, Nav } from "../../model/navContent";
 
 const { navLists } = defineProps<{
@@ -10,7 +10,6 @@ const topList = ref<Nav[]>([]);
 
 const collectEventHandle = (value :Nav[]) => {
   topList.value = value;
-
 }
 
 </script>
@@ -20,7 +19,7 @@ const collectEventHandle = (value :Nav[]) => {
     <div v-if="topList?.length" class="w-full">
     <p class="text-xl font-bold my-6">{{ collectTitle }}</p>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-      <collect-item :collect-item="topList" ></collect-item>
+      <collect-item :collect-item="topList"></collect-item>
     </div>
   </div>
   </Transition>

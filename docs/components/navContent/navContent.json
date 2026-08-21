@@ -4,7 +4,7 @@
       "name": "知识基石",
       "nav": [
         {
-          "icon": "https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png",
+          "icon": "https://developer.mozilla.org/favicon.ico",
           "name": "mdn",
           "abbreviation": "记录网络技术，包括CSS，HTML和JavaScript，从2005年开始",
           "link": "https://developer.mozilla.org/zh-CN/"
@@ -144,16 +144,32 @@
           "name": "golden-layout",
           "abbreviation": "webapps的多窗口布局管理器",
           "link": "https://golden-layout.com/"
+        },
+        {
+          "icon": "",
+          "name": "Hanzi Writer",
+          "abbreviation": "平滑过渡笔画书写",
+          "link": "https://hanziwriter.org/cn/docs.html#animation-link"
+        },
+        {
+          "icon": "",
+          "name": "chinese-stroke",
+          "abbreviation": "获取中国汉字笔画数量",
+          "link": "https://www.npmjs.com/package/chinese-stroke"
+        },
+        {
+          "icon": "",
+          "name": "gif.js",
+          "abbreviation": "抓捕帧率,制作gif",
+          "link": "https://jnordberg.github.io/gif.js/"
         }
-
-
       ]
     },
     {
       "name": "网络请求",
       "nav": [
         {
-          "icon": "http://axios-http.com/assets/favicon.ico",
+          "icon": "https://axios.rest/favicon.ico",
           "name": "Axios",
           "abbreviation": "易用、简洁且高效的http库",
           "link": "http://www.axios-js.com/"
@@ -182,7 +198,7 @@
           "link": "https://svelte.yayujs.com/"
         },
         {
-          "icon": "https://next.shadcn-svelte.com/favicon.ico",
+          "icon": "https://shadcn-svelte.com/favicon.ico",
           "name": "shadcn-svelte",
           "abbreviation": "svelte 设计精美的组件库",
           "link": "https://next.shadcn-svelte.com/"
@@ -386,7 +402,7 @@
           "link": "https://vue3.github.io/vue3-News/"
         },
         {
-          "icon": "https://element-plus.org/apple-touch-icon.png",
+          "icon": "https://element-plus.org/images/element-plus-logo-small.svg",
           "name": "Element Plus",
           "abbreviation": "基于 Vue 3，面向设计师和开发者的组件库",
           "link": "https://element-plus.org/zh-CN/"
@@ -410,7 +426,7 @@
           "link": "https://www.naiveui.com/zh-CN/os-theme"
         },
         {
-          "icon": "https://next.antdv.com/assets/logo.1ef800a8.svg",
+          "icon": "https://www.antdv.com/favicon.ico",
           "name": "Ant Design Vue",
           "abbreviation": "一个基于Ant设计和Vue的企业级UI组件",
           "link": "https://antdv.com/components/overview"
@@ -434,12 +450,6 @@
           "link": "https://www.layui-vue.com/zh-CN/components/fullscreen"
         },
         {
-          "icon": "https://www.radix-vue.com/logo.svg",
-          "name": "Radix Vue",
-          "abbreviation": "基数UI原语的Vue端口",
-          "link": "https://www.radix-vue.com/"
-        },
-        {
           "icon": "https://mdn.alipayobjects.com/huamei_iwk9zp/afts/img/A*eco6RrQhxbMAAAAAAAAAAAAADgCCAQ/original",
           "name": "Ant Design X Vue",
           "abbreviation": "Ant Design X For Vue。基于 RICH 设计范式，打造卓越 AI 界面解决方案，引领智能新体验。",
@@ -461,6 +471,30 @@
           "name": "React.js",
           "abbreviation": "React",
           "link": "https://zh-hans.react.dev/"
+        },
+        {
+          "icon": "https://reactrouter.com/favicon-light.png",
+          "name": "react-router",
+          "abbreviation": "React 路由",
+          "link": "https://reactrouter.com/start/modes"
+        },
+        {
+          "icon": "https://react-icons.github.io/react-icons/favicon.png",
+          "name": "React Icons",
+          "abbreviation": "React icon",
+          "link": "https://react-icons.github.io/react-icons/"
+        },
+        {
+          "icon": "https://redux.js.org/img/favicon/favicon.ico",
+          "name": "Redux",
+          "abbreviation": "Redux是一个JS库，用于可预测和可维护的全局状态管理。 (类似pinia)",
+          "link": "https://redux.js.org/introduction/getting-started"
+        },
+        {
+          "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+          "name": "Ant Design",
+          "abbreviation": "React UI 库",
+          "link": "https://ant-design.antgroup.com/index-cn"
         }
       ]
     },
@@ -664,7 +698,7 @@
           "link": "https://pixabay.com/"
         },
         {
-          "icon": "https://www.pexels.com/assets/static/images/meta/favicon.ico",
+          "icon": "https://static.pexels.com/1/images/meta/favicon.ico",
           "name": "免费素材图片",
           "abbreviation": "才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频。",
           "link": "https://www.pexels.com/zh-cn/"
