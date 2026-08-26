@@ -1,0 +1,35 @@
+stages:
+  - deploy
+
+variables:
+  PROJECT_NAME: "my-blog" # 修改为你的项目名称
+
+# 缓存 node_modules 加速构建（可选）
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+# 场景一：代码合入前部署预览链接 (Preview)
+# 当产生 Merge Request 时触发
+deploy-preview:
+  image: node:20.19.4 # 选择适合的 Node.js 版本
+  stage: deploy
+  only:
+    - merge_requests
+  script:
+    - pnpm install
+    - pnpm docs:build
+    - npx edgeone makers deploy -n $PROJECT_NAME -t $EDGEONE_API_TOKEN -e preview
+
+# 场景二：部署主干代码变更 (Production)
+# 当代码推送到 main 分支时触发
+deploy-production:
+  image: node:20.19.4 # 选择适合的 Node.js 版本
+  stage: deploy
+  only:
+    - main
+  script:
+    - pnpm install
+    - pnpm docs:build
+    - npx edgeone makers deploy -n $PROJECT_NAME -t $EDGEONE_API_TOKEN -e production
