@@ -30,6 +30,17 @@
       ]
     },
     {
+      "name": "AI模型",
+      "nav": [
+        {
+          "icon": "https://comfy.org/favicon.ico",
+          "name": "ComfyUI",
+          "abbreviation": "在您的硬件上运行 永远免费。",
+          "link": "https://comfy.org/download"
+        }
+      ]
+    },
+    {
       "name": "AI风暴",
       "nav": [
         {
@@ -554,7 +565,7 @@
       ]
     },
     {
-      "name": "CDN&开源",
+      "name": "CDN镜像",
       "nav": [
         {
           "icon": "https://www.bootcdn.cn/assets/ico/apple-touch-icon-144-precomposed.png?1721497202689",
@@ -563,16 +574,16 @@
           "link": "https://www.bootcdn.cn/"
         },
         {
-          "icon": "https://github.com/fluidicon.png",
-          "name": "GitHub",
-          "abbreviation": "世界上最广泛采用的人工智能开发平台",
-          "link": "https://github.com/"
+          "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+          "name": "HuggingFace",
+          "abbreviation": "人工智能社区构建未来。（海外镜像包需要翻墙）",
+          "link": "https://huggingface.co/"
         },
         {
-          "icon": "https://gitee.com/assets/favicon_message.ico?1581387642851",
-          "name": "gitee",
-          "abbreviation": "国内领先的企业级研发效能和开源代码托管平台",
-          "link": "https://gitee.com/"
+          "icon": "https://www.modelscope.cn/favicon.ico",
+          "name": "ModelScope",
+          "abbreviation": "共享 · 共创 · 共进，构建持续创新的 AI 开源生态",
+          "link": "https://www.modelscope.cn/home"
         }
       ]
     },

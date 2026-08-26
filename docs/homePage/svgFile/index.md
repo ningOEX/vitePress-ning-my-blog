@@ -13,6 +13,7 @@ updated: 2026-7-28
 - [path 关键字大全](allKey.md)
 - [stroke 属性大全](stroke.md)
 - [text 属性大全](text.md)
+- [svg 属性](svg.md)
 
 - [svg 坐标系封装-一键使用](coord.md)
 
