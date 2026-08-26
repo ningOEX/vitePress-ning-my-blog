@@ -1,0 +1,11 @@
+{
+  "buildCommand": "vitepress build docs",
+  "installCommand": "npm install",
+  "outputDirectory": "./build",
+  "rewrites": [
+    {
+      "source": "/*",
+      "destination": "/index.html"
+    }
+  ]
+}
