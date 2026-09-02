@@ -23,6 +23,8 @@ updated: 2024-12-04
 - --- [创建一个网格漫反射材质](three/Material/MeshLambertMaterial.md) 
 - --- [创建一个网格高光材质](three/Material/MeshPhongMaterial.md) 
 
+## Blender
+- --- [Blender路线](Blender/index.md)
 
 ## 图库开发API
 

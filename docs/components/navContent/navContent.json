@@ -37,6 +37,18 @@
           "name": "ComfyUI",
           "abbreviation": "在您的硬件上运行 永远免费。",
           "link": "https://comfy.org/download"
+        },
+        {
+          "icon": "https://www.blender.org/favicon.ico",
+          "name": "Blender",
+          "abbreviation": "下载工具",
+          "link": "https://www.blender.org/"
+        },
+        {
+          "icon": "https://www.blender.org/favicon.ico",
+          "name": "Blender",
+          "abbreviation": "Blender中文文档",
+          "link": "https://docs.blender.org/manual/zh-hans/2.92/"
         }
       ]
     },
@@ -684,13 +696,8 @@
           "name": "Markdown 语法",
           "abbreviation": "Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版",
           "link": "https://markdown.com.cn/basic-syntax/"
-        },
-        {
-          "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
-          "name": "Vercel",
-          "abbreviation": "Vercel提供开发工具和云基础设施来构建、扩展和保护更快、更个性化的web。",
-          "link": "https://vercel.com/"
         }
+
       ]
     },
     {
@@ -743,6 +750,29 @@
           "name": "verse",
           "abbreviation": "最大的开源UI库",
           "link": "https://uiverse.io/"
+        }
+      ]
+    },
+    {
+      "name":"开源项目托管",
+      "nav": [
+        {
+          "icon": "https://console.cloud.tencent.com/favicon.ico",
+          "name": "腾讯云 EdgeOne",
+          "abbreviation": "从应用到底座，AI 能力全链路覆盖",
+          "link": "https://console.cloud.tencent.com/"
+        },
+        {
+          "icon": "https://pages.edgeone.ai/favicon.ico",
+          "name": "EdgeOne 配置文档",
+          "abbreviation": "在同个平台上，分钟级交付现代 Web 应用—具备托管、函数与存储，以及 AI Agents—具备沙箱工具、记忆、可观测性与内置模型。",
+          "link": "https://pages.edgeone.ai/zh/document/product-introduction"
+        },
+        {
+          "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
+          "name": "Vercel",
+          "abbreviation": "Vercel提供开发工具和云基础设施来构建、扩展和保护更快、更个性化的web。",
+          "link": "https://vercel.com/"
         }
       ]
     },
