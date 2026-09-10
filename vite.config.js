@@ -7,5 +7,16 @@ export default {
                 rewrite: (path) => path.replace(/^\/api/, '')
             }
         }
+    },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'element-plus': ['element-plus'],
+                    'vendor': ['@fortawesome/fontawesome-free']
+                }
+            }
+        },
+        chunkSizeWarningLimit: 600
     }
 };

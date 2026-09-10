@@ -80,4 +80,22 @@ export default defineConfig({
     }
   },
 
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('@fortawesome')) {
+                return 'vendor'
+              }
+              return 'vendor'
+            }
+          }
+        }
+      },
+      chunkSizeWarningLimit: 600
+    }
+  }
+
 })
