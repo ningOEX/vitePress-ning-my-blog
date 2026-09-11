@@ -47,7 +47,7 @@
 | **`stroke-dashoffset`** | 虚线起始偏移量 | 数值（如 `0`、`10`、`-5`），正数向左偏移 |
 
 **`stroke-dasharray` 详解：**
-```xml
+```svg
 stroke-dasharray="10,5"     <!-- 实线10，间隔5，循环 -->
 stroke-dasharray="10,5,2"   <!-- 实线10，间隔5，实线2，间隔5 → 循环为10,5,2,5 -->
 stroke-dasharray="10"       <!-- 实线10，间隔10（默认间隔=实线长度） -->
@@ -76,7 +76,7 @@ stroke-dasharray="10"       <!-- 实线10，间隔10（默认间隔=实线长度
 
 ## 七、完整示例
 
-```xml
+```svg
 <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
   <!-- 基础描边 -->
   <line x1="10" y1="10" x2="190" y2="10" 

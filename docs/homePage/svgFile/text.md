@@ -53,7 +53,7 @@
 | **direction** | 文本方向 | `ltr` / `rtl` |
 | **unicode-bidi** | 双向文本控制 | `normal` / `embed` / `bidi-override` |
 
-```xml
+```svg
 <text x="100" y="50" text-anchor="middle" dominant-baseline="central">居中文本</text>
 ```
 
@@ -65,7 +65,7 @@
 
 通过 `<tspan>` 子元素可精细控制片段样式：
 
-```xml
+```svg
 <text>
   普通文字 <tspan fill="red" font-weight="bold">红色加粗</tspan> 继续普通
 </text>
