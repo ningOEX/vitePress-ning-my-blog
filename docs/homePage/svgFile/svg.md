@@ -14,4 +14,19 @@
 
 > radialGradient 用来定义径向渐变，以对图形元素进行填充或描边。[详细参考](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Reference/Element/radialGradient)
 
- - 
+## 3. 遮罩
+
+> mask [详细参考](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mask)
+
+## 4. 图形填充
+
+> pattern [详细参考](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/pattern)
+
+## 5. 动画
+
+```html
+<animate>
+<anmiateTransform>
+<nimateMotion>
+<set>
+```
