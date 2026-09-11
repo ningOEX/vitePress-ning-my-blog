@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="TranslationTools Logo" width="120" height="120" src="./docs/images/logo.png">
+  <img alt="TranslationTools Logo" width="60" height="140" src="./docs/images/person.png">
   <h1>NING OEX</h1>
 
 [//]: # (  <span><a href="./README.EN.md">English</a> | 中文</span>)
