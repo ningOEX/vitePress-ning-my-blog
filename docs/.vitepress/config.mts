@@ -26,7 +26,7 @@ export default defineConfig({
           { text: 'CSS', link: '/homePage/cssFile/' },
           { text: 'Vue', link: '/homePage/vueFile/' },
           { text: 'React', link: '/homePage/ReactFile/' },
-          { text: 'SVG', link: '/homePage/SVGFile/' },
+          { text: 'SVG', link: '/homePage/svgFile/' },
         ]
       },
       { text: "AI智能", link: '/aiPage/' },
