@@ -8,9 +8,6 @@ const topList = ref<Nav[]>([]);
 
 const collectionKey = "topList";
 
-const change = (link: string) => {
-  window.open(link, "_blank");
-};
 /**
  * 添加置顶
  * @param nav
@@ -47,9 +44,10 @@ onMounted(() => {
     :key="index"
     class="relative bg-gray-300/30 dark:bg-black/20 py-2 px-2 min-w-32 md:min-w-52 grid gap-2 cursor-default border rounded-md hover:bg-[#a8b1ff] dark:border-gray-500/30 dark:hover:border-[#a8b1ff] dark:hover:bg-black/20"
   >
-    <div
+    <a
       class="flex gap-2 items-center cursor-pointer hover:text-[#a8b1ff]"
-      @click="change(nav.link)"
+      :href="nav.link"
+      target="_blank"
     >
       <div class="p-1 bg-gray-300/50 dark:bg-gray-700/50">
         <img
@@ -63,7 +61,7 @@ onMounted(() => {
         />
       </div>
       <span class="font-bold"> {{ nav.name }}</span>
-    </div>
+    </a>
     <span class="text-xs text-slate-500 line-clamp-2">{{
       nav.abbreviation
     }}</span>

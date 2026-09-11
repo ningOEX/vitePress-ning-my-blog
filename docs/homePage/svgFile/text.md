@@ -15,7 +15,7 @@
 | **textLength** | 强制文本渲染后的总长度（会拉伸或压缩） | `textLength="200"` |
 | **lengthAdjust** | 配合 `textLength`，指定调整方式 | `spacing`（调整间距） / `spacingAndGlyphs`（调整字宽） |
 
-```svg
+```html
 <text x="20" y="40" dx="5,10,15" dy="2,0,0">SVG</text>
 ```
 
