@@ -1,7 +1,29 @@
 <template>
   <div class="flex justify-around max-h-36 shadow-lg" style="border-radius: 5px">
     <div class="w-1/2 mx-auto p-2 pl-5 pt-5">
-      <img class="w-28 hover:animate-spin" style="border-radius: 20px" src="../images/logo.png" alt="" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="105" height="105">
+        <defs>
+          <filter id="f6">
+            <feTurbulence baseFrequency="0.05 0.5" result="img1">
+              <animate attributeType="XML" attributeName="baseFrequency" from="0.05 0.5" to="0.15 0.25" dur="100s"
+                       fill="freeze" repeatDur="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="img" xChannelSelector="R" yChannelSelector="G" scale="10">
+              <animate attributeType="XML"
+                       attributeName="scale"
+                       from="10" to="1"
+                       dur="2s"
+                       repeatCount="1"
+                       fill="freeze"/>
+            </feDisplacementMap>
+            <feDropShadow dx="3" dy="3" stdDeviation="0.2" flood-color="#ffc"></feDropShadow>
+          </filter>
+          <clipPath id="rounded">
+            <rect x="0" y="0" width="100" height="100" rx="10" ry="10"/>
+          </clipPath>
+        </defs>
+        <image href="https://avatars.githubusercontent.com/u/52589990?v=4" height="100" width="100" filter="url(#f6)" clip-path="url(#rounded)" preserveAspectRatio="xMidYMid slice" />
+      </svg>
     </div>
     <div class="w-2/3 p-4 grid grid-cols-1 grid-rows-1 gap-6">
       <span class="text-sm flex items-center mt-4">NING OEX</span>

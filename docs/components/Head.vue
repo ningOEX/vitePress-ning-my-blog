@@ -6,7 +6,30 @@
         src="https://avatars.githubusercontent.com/u/52589990?v=4"
         alt=""
       />
-      <p class="font-sans text-4xl">NING OEX</p>
+      <div class="w-full flex justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="-1 0 220 60">
+          <defs>
+            <filter id="f4">
+              <feTurbulence baseFrequency="0.25" result="img4" />
+              <feDisplacementMap in="SourceGraphic" in2="img4" xChannelSelector="B" yChannelSelector="R" scale="100">
+                <animate id="animateMap" attributeType="XML" attributeName="scale" from="100" to="10" dur="1.5s"
+                         fill="freeze" />
+              </feDisplacementMap>
+            </filter>
+            <linearGradient id="lineGradient" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#caf" />
+              <stop offset="1" stop-color="#fac" />
+            </linearGradient>
+          </defs>
+          <text x="105" y="42" text-anchor="middle" font-size="40" fill="url(#lineGradient)" filter="url(#f4)">NING OEX</text>
+          <path id="pathLine" d="M30 60 L180 60, M180 60 A30 30 0 1 0 180 0, M180 0 L30 0, M30 0 A30 30 0 1 0 30 60" fill="none" />
+          <rect x="0" y="0" width="5" height="5" fill="url(#lineGradient)">
+            <animateMotion dur="15s" rotate="auto-reverse" repeatCount="indefinite">
+              <mpath href="#pathLine" />
+            </animateMotion>
+          </rect>
+        </svg>
+      </div>
       <div class="p-2 text-xl h-20">
         <Transition name="fade" mode="out-in">
           <span v-if="currentItem" >{{ currentItem.content }}</span>

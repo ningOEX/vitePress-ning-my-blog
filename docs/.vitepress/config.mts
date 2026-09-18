@@ -21,12 +21,13 @@ export default defineConfig({
       {
         text: '大前端',
         items: [
-          { text: 'javaScript', link: '/homePage/jsFile/' },
+          { text: 'JavaScript', link: '/homePage/jsFile/' },
           { text: 'HTML', link: '/homePage/htmlFile/' },
           { text: 'CSS', link: '/homePage/cssFile/' },
           { text: 'Vue', link: '/homePage/vueFile/' },
           { text: 'React', link: '/homePage/ReactFile/' },
           { text: 'SVG', link: '/homePage/svgFile/' },
+          { text: 'Canvas', link: '/homePage/canvasFile/' },
         ]
       },
       { text: "AI智能", link: '/aiPage/' },
