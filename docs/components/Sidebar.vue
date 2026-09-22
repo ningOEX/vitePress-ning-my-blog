@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-around max-h-36 shadow-lg" style="border-radius: 5px">
+  <div class="flex justify-around max-h-36 rounded-sm bg-neutral-50 dark:bg-neutral-800 dark:text-gray-50 shadow-md shadow-gray-400 " style="border-radius: 5px">
     <div class="w-1/2 mx-auto p-2 pl-5 pt-5">
       <svg xmlns="http://www.w3.org/2000/svg" width="105" height="105">
         <defs>
@@ -25,7 +25,7 @@
         <image href="https://avatars.githubusercontent.com/u/52589990?v=4" height="100" width="100" filter="url(#f6)" clip-path="url(#rounded)" preserveAspectRatio="xMidYMid slice" />
       </svg>
     </div>
-    <div class="w-2/3 p-4 grid grid-cols-1 grid-rows-1 gap-6">
+    <div class="w-2/3 p-4 grid grid-cols-1 grid-rows-1 gap-6 bg">
       <span class="text-sm flex items-center mt-4">NING OEX</span>
       <span class="text-xs">不积跬步无以至千里</span>
       <div class="grid grid-cols-2 grid-rows-2 items-center text-center text-xs gap-2">

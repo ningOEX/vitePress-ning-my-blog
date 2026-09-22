@@ -21,7 +21,7 @@ const list = [
 </script>
 
 <template>
-  <div class="br p-4 shadow-lg">
+  <div class="br p-4 shadow-lg bg-neutral-50 dark:bg-neutral-800 my-4">
     <span class="text-xs">📢{{ title }}</span>
     <div>
       <div

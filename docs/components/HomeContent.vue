@@ -38,7 +38,7 @@ onMounted(async () => {
       v-for="(item, index) in list"
       :key="index"
       @click="handleClick(item)"
-      class="grid rounded-sm grid-cols-1 grid-rows-1 gap-2 shadow-lg p-4 cursor-pointer hover:outline hover:outline-gray-700/20 hover:hover:shadow-gray-700/50 dark:hover:shadow-gray-700 dark:hover:outline dark:hover:outline-gray-700"
+      class="grid rounded-sm grid-cols-1 grid-rows-1 gap-2 shadow-lg p-4 cursor-pointer hover:outline dark:hover:bg-neutral-800 hover:bg-neutral-50 dark:hover:text-gray-50 dark:text-gray-400 text-gray-400 hover:text-black  transition hover:outline-gray-700/20 hover:hover:shadow-gray-700/50 dark:hover:shadow-gray-700 dark:hover:outline dark:hover:outline-gray-700"
     >
       <span class="text-xl font-bold">{{ item.title }}</span>
       <span

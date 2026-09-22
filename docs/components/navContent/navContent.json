@@ -750,6 +750,12 @@
           "name": "verse",
           "abbreviation": "最大的开源UI库",
           "link": "https://uiverse.io/"
+        },
+        {
+          "icon": "https://pixabay.com/favicon-16x16.png",
+          "name": "pixabay",
+          "abbreviation": "视频素材网站量大，CC0，可商用免署名",
+          "link": "https://pixabay.com/"
         }
       ]
     },
