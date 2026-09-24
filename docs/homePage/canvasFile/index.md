@@ -32,4 +32,10 @@ updated: 2026-9-17
 - [滤镜 filter](filter.md)
 
 ## 图像变换
-- [图像变换&位移](move.md)
+- [图像变换](move.md)
+
+## 状态与重置
+- [状态与重置](state_restore.md)
+
+## 实战案例
+- [案例](canvas_demo.md)
