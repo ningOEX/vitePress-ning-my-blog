@@ -30,7 +30,18 @@
       ]
     },
     {
-      "name": "AI模型",
+       "name": "AI Agent",
+       "nav": [
+        {
+          "icon": "https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f5cd1485db3b4f328599afe28a1b54d9~tplv-goo7wpa0wc-topic.png",
+          "name": "traeCode",
+          "abbreviation": "因 AI 而强大,学习大牛思维。",
+          "link": "https://www.trae.cn/"
+        }
+       ]
+    },
+    {
+      "name": "AI 相关",
       "nav": [
         {
           "icon": "https://comfy.org/favicon.ico",
@@ -49,12 +60,7 @@
           "name": "Blender",
           "abbreviation": "Blender中文文档",
           "link": "https://docs.blender.org/manual/zh-hans/2.92/"
-        }
-      ]
-    },
-    {
-      "name": "AI风暴",
-      "nav": [
+        },
         {
           "icon": "https://web-note.cn//favicon.ico",
           "name": "AI宝库资源导航",
@@ -185,6 +191,12 @@
           "name": "gif.js",
           "abbreviation": "抓捕帧率,制作gif",
           "link": "https://jnordberg.github.io/gif.js/"
+        },
+        {
+          "icon": "https://cdn.plyr.io/static/icons/favicon.ico",
+          "name": "plyr",
+          "abbreviation": "一个简单的HTML5，YouTube和Vimeo播放器",
+          "link": "https://plyr.io/"
         }
       ]
     },
@@ -290,17 +302,6 @@
           "name": "gsap",
           "abbreviation": "GSAP是一个用于构建高性能动画的JavaScript库，可在**各* *主流浏览器中运行。动画CSS，SVG，画布，React，Vue，WebGL，颜色，字符串，运动路径，通用对象...",
           "link": "https://gsap.com/"
-        }
-      ]
-    },
-    {
-      "name": "Video ",
-      "nav": [
-        {
-          "icon": "https://cdn.plyr.io/static/icons/favicon.ico",
-          "name": "plyr",
-          "abbreviation": "一个简单的HTML5，YouTube和Vimeo播放器",
-          "link": "https://plyr.io/"
         }
       ]
     },
@@ -779,6 +780,12 @@
           "name": "Vercel",
           "abbreviation": "Vercel提供开发工具和云基础设施来构建、扩展和保护更快、更个性化的web。",
           "link": "https://vercel.com/"
+        },
+        {
+          "icon": "https://github.com/favicon.ico",
+          "name": "GitHub",
+          "abbreviation": "GitHub 是一个基于 Git 的代码托管平台，用于存储、分享和协作开发项目。",
+          "link": "https://github.com/"
         }
       ]
     },
