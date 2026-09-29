@@ -1,56 +1,62 @@
 {
-  "hash": "96a0d3a2",
+  "hash": "a18b9369",
   "configHash": "3ceb076b",
-  "lockfileHash": "4fdf40d5",
-  "browserHash": "a0ff0eff",
+  "lockfileHash": "94bc480d",
+  "browserHash": "f061f30d",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "e4264f59",
+      "fileHash": "58560ef8",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "21060896",
+      "fileHash": "f3f29435",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "09c8d40c",
+      "fileHash": "3e4c9e3d",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "df0f88c7",
+      "fileHash": "2350d73a",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "48443012",
+      "fileHash": "d30e2405",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "241d70e5",
+      "fileHash": "ae5035a1",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "5bc6b78d",
+      "fileHash": "6f8a5a6d",
       "needsInterop": false
     },
-    "rss-parser": {
-      "src": "../../../../node_modules/rss-parser/index.js",
-      "file": "rss-parser.js",
-      "fileHash": "eb6a96a6",
-      "needsInterop": true
+    "animejs": {
+      "src": "../../../../node_modules/animejs/lib/anime.es.js",
+      "file": "animejs.js",
+      "fileHash": "7c49f685",
+      "needsInterop": false
+    },
+    "gsap": {
+      "src": "../../../../node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "c8037eb5",
+      "needsInterop": false
     }
   },
   "chunks": {

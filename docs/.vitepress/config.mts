@@ -8,6 +8,15 @@ export default defineConfig({
 
   lastUpdated: true,
 
+  // 防白屏：页面加载即渲染暗色底
+  head: [
+    ['style', {}, `
+      html, body { background: #09090b !important; }
+      html:not(.dark) body, html.light body { background: #f8fafc !important; }
+      #app { min-height: 100vh; background: inherit; }
+    `]
+  ],
+
   themeConfig: {
 
     lastUpdatedText: '最后更新',
@@ -17,7 +26,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "武器库", link: '/navContent/' },
-      { text: "开发笔记", link: '/usePage/' },
+      // { text: "开发笔记", link: '/usePage/' },
       {
         text: '大前端',
         items: [
@@ -30,7 +39,7 @@ export default defineConfig({
           { text: 'Canvas', link: '/homePage/canvasFile/' },
         ]
       },
-      { text: "AI智能", link: '/aiPage/' },
+      // { text: "AI智能", link: '/aiPage/' },
       { text: "DEMO作品", link: '/demo/' },
     ],
 

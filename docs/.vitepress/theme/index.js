@@ -1,18 +1,18 @@
 import DefaultTheme from 'vitepress/theme';
 
 // components
-import UpdatedTime from '../../components/UpdatedTime.vue';
-import WordCount from '../../components/WordCount.vue';
-import Home from '../../components/Home.vue';
-import Layout from '../../components/Layout.vue';
-import navContent from "../../components/navContent/index.vue"
+import UpdatedTime from '../../components/widgets/UpdatedTime.vue';
+import WordCount from '../../components/widgets/WordCount.vue';
+import Home from '../../components/layout/Home.vue';
+import Layout from '../../components/layout/Layout.vue';
+import navContent from "../../components/nav/index.vue"
 import ElementPlus from 'element-plus'
-import ImagesView  from '../../components/imgaesView.vue'
-import iconTop from "../../components/svg/iconTop.vue"
-import iconBottom from "../../components/svg/iconBottom.vue"
-import navItem from '../../components/navContent/navItem.vue';
-import collectItem from '../../components/navContent/collectItem.vue';
-import tmdbMovie from "../../components/works/tmdbMovie.vue"
+import ImagesView  from '../../components/widgets/imgaesView.vue'
+import iconTop from "../../components/icons/iconTop.vue"
+import iconBottom from "../../components/icons/iconBottom.vue"
+import navItem from '../../components/nav/navItem.vue';
+import collectItem from '../../components/nav/collectItem.vue';
+import tmdbMovie from "../../components/works/index.vue"
 
 // css
 import '@fortawesome/fontawesome-free/css/all.css';
