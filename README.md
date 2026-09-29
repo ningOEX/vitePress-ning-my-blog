@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="NING OEX" width="120" height="120" src="./docs/assets/person.png" style="border-radius: 50%;">
+  <img alt="NING OEX" width="80" height="120" src="./docs/assets/person.png" style="border-radius: 50%;">
   <h1>NING OEX</h1>
   <p>个人博客 · 大前端技术笔记 · 随心记录</p>
 
