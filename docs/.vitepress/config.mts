@@ -26,7 +26,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "武器库", link: '/navContent/' },
-      // { text: "开发笔记", link: '/usePage/' },
+      { text: "开发笔记", link: '/usePage/' },
       {
         text: '大前端',
         items: [

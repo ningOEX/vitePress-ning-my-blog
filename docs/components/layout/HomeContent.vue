@@ -48,7 +48,7 @@ onUnmounted(() => gsap.killTweensOf(".hc-card"));
 </script>
 
 <template>
-  <div class="grid gap-4 py-6 pt-4 box-border">
+  <div class="grid gap-4 box-border">
     <article
       v-for="(item, index) in list"
       :key="index"
