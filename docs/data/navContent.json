@@ -37,9 +37,28 @@
           "name": "traeCode",
           "abbreviation": "因 AI 而强大,学习大牛思维。",
           "link": "https://www.trae.cn/"
-        }
+        },
+         {
+           "icon": "https://www.compshare.cn/favicon.ico",
+           "name": "优云智算（GPU）",
+           "abbreviation": "一站式 AI 云服务从开发测试到生产级部署。",
+           "link": "https://www.compshare.cn/"
+         },
+         {
+           "icon": "https://www.autodl.com/favicon.png",
+           "name": "autoDl（GPU）",
+           "abbreviation": "AutoDL坚持为您提供服务稳定、价格公道的GPU租用服务。",
+           "link": "https://www.autodl.com/home"
+         },
+         {
+           "icon": "https://gpu.ai-galaxy.com/logo.svg",
+           "name": "智星云（GPU）",
+           "abbreviation": "GPU出租",
+           "link": "https://gpu.ai-galaxy.com/store"
+         }
        ]
     },
+
     {
       "name": "AI 相关",
       "nav": [
@@ -838,6 +857,12 @@
           "name": "webGL",
           "abbreviation": "WebGL经常被当成3D API，人们总想“我可以使用WebGL和一些神奇的东西做出炫酷的3D作品",
           "link": "https://webglfundamentals.org/webgl/lessons/zh_cn/webgl-fundamentals.html"
+        },
+        {
+          "icon": "https://www.ruanyifeng.com/road/images/published_cover_sm.jpg",
+          "name": "WebGL 理论基础",
+          "abbreviation": "从基础理论开始学习WebGL，稳！",
+          "link": "https://webglfundamentals.org/webgl/lessons/zh_cn/"
         }
       ]
     }

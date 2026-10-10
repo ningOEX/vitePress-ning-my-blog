@@ -37,6 +37,7 @@ export default defineConfig({
           { text: 'React', link: '/homePage/ReactFile/' },
           { text: 'SVG', link: '/homePage/svgFile/' },
           { text: 'Canvas', link: '/homePage/canvasFile/' },
+          { text: 'Webgl', link: '/homePage/webglFile/' },
         ]
       },
       // { text: "AI智能", link: '/aiPage/' },
