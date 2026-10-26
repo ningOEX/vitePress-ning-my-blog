@@ -14,11 +14,8 @@ updated: 2024-12-04
 
 - 👉 [vitepress 中 ⭐tailwindcss 的使用手册](./useTailwindcss.md)
 - 👉 [vitepress 中 ⭐Element-plus 的使用手册](./useElement-plus.md)
-<!-- - 👉 [GSAP 动画库使用手册](./gsap/index.md) -->
-
-
 ## GSAP
-- [gsap.js 使用](GSAP/index.md)
+- [gsap.js 使用](gsap/index.md)
 
 ## Three.js
 

@@ -26,7 +26,11 @@ import gsap from "gsap";
 
 // ---------------- 主题感知 ----------------
 const isDark = ref(false);
-const checkDark = () => { isDark.value = document.documentElement.classList.contains("dark"); };
+const checkDark = () => {
+  if (typeof document !== "undefined") {
+    isDark.value = document.documentElement.classList.contains("dark");
+  }
+};
 
 const getAccent = () => (isDark.value ? "#c084fc" : "#6366f1");
 const getAccent2 = () => (isDark.value ? "#22d3ee" : "#06b6d4");
@@ -56,7 +60,7 @@ const canvasRef = ref(null);
 const ctx = shallowRef(null);
 const particles = shallowRef([]);
 const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
-const dpr = Math.min(window.devicePixelRatio || 1, 2);
+let dpr = 1; // 在 onMounted 中初始化
 const PARTICLE_COUNT = 90;
 const LINK_DISTANCE = 150;
 
@@ -196,6 +200,7 @@ const playEntrance = () => {
 
 onMounted(() => {
   checkDark();
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
   resizeCanvas();
   ctx.value = canvasRef.value.getContext("2d");
   initParticles();
